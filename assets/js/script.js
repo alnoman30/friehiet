@@ -301,3 +301,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+// audio bars
+  document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll(
+      ".container img[src*='bar1.svg']"
+    );
+
+    // Set origin so bars grow from bottom
+    gsap.set(bars, {
+      transformOrigin: "bottom center",
+    });
+
+    function animateBars() {
+      bars.forEach((bar, i) => {
+        gsap.to(bar, {
+          scaleY: () => gsap.utils.random(0.2, 1.8),
+          duration: gsap.utils.random(0.4, 1.2),
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+          delay: i * 0.03, // slight wave movement across bars
+        });
+      });
+    }
+
+    animateBars();
+  });
