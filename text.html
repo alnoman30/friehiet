@@ -1,96 +1,65 @@
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
 
-  <style>
-    /* optional: smooth look */
-    .bar {
-      transform-origin: bottom;
-      background: #CBA34E;
-      border-radius: 2px;
-    }
-  </style>
+  const section = document.querySelector(".values-section");
+  const items = section.querySelectorAll(".group");
 
+  /* ---------------------------
+     1. MOTION BLUR REVEAL
+  ----------------------------*/
+  gsap.from(items, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 75%",
+    },
+    opacity: 0,
+    y: 40,
+    filter: "blur(12px)",
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.08
+  });
 
-<section class="py-16 md:py-24">
-  <div
-    class="container mx-auto bg-primary rounded-4xl overflow-hidden shadow-xl flex flex-col md:flex-row items-stretch relative"
-  >
+  /* ---------------------------
+     2. MAGNET EFFECT (SCOPED)
+  ----------------------------*/
+  items.forEach((item) => {
+    const icon = item.querySelector("svg");
+    let bounds;
 
-    <!-- LEFT -->
-    <div
-      class="relative w-full md:w-1/2 flex items-end justify-center pt-12 md:pt-24 overflow-hidden"
-    >
+    item.addEventListener("mouseenter", () => {
+      bounds = item.getBoundingClientRect();
+    });
 
-      <!-- WAVES -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+    item.addEventListener("mousemove", (e) => {
+      const relX = e.clientX - bounds.left;
+      const relY = e.clientY - bounds.top;
 
-        <div class="flex items-center gap-[200px]">
+      const x = (relX - bounds.width / 2) * 0.2;
+      const y = (relY - bounds.height / 2) * 0.2;
 
-          <!-- LEFT BARS -->
-          <div class="flex items-end gap-2 wave-group">
-            <div class="bar w-1 h-[120px]"></div>
-            <div class="bar w-1 h-[200px]"></div>
-            <div class="bar w-1 h-[300px]"></div>
-            <div class="bar w-1 h-[400px]"></div>
-            <div class="bar w-1 h-[500px]"></div>
-            <div class="bar w-1 h-[420px]"></div>
-            <div class="bar w-1 h-[320px]"></div>
-            <div class="bar w-1 h-[220px]"></div>
-            <div class="bar w-1 h-[140px]"></div>
-          </div>
+      gsap.to(icon, {
+        x,
+        y,
+        scale: 1.1,
+        duration: 0.4,
+        ease: "power3.out"
+      });
+    });
 
-          <!-- RIGHT BARS -->
-          <div class="flex items-end gap-2 wave-group">
-            <div class="bar w-1 h-[140px]"></div>
-            <div class="bar w-1 h-[220px]"></div>
-            <div class="bar w-1 h-[320px]"></div>
-            <div class="bar w-1 h-[420px]"></div>
-            <div class="bar w-1 h-[500px]"></div>
-            <div class="bar w-1 h-[400px]"></div>
-            <div class="bar w-1 h-[300px]"></div>
-            <div class="bar w-1 h-[200px]"></div>
-            <div class="bar w-1 h-[120px]"></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- glow -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div class="w-[600px] h-[600px] bg-[radial-gradient(circle,_#CBA34E_0%,_rgba(203,163,78,0)_70%)]"></div>
-      </div>
-
-      <!-- PERSON -->
-      <img
-        src="assets/images/listen-live-person.png"
-        class="relative z-10 max-h-[620px] object-contain drop-shadow-2xl"
-      />
-
-    </div>
-
-    <!-- RIGHT -->
-    <div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white">
-      <span class="inline-block border border-white/20 rounded-full px-4 py-1 text-xs mb-4">
-        Upcoming Live
-      </span>
-
-      <h2 class="text-4xl font-light mb-6">
-        Listen <span class="text-[#DDA853] italic">Live</span>
-      </h2>
-
-      <h3 class="text-xl font-bold mb-4">
-        Rebuilding Clarity in Life & Relationships
-      </h3>
-
-      <p class="text-gray-300 mb-6 max-w-md">
-        A live coaching session focused on emotional patterns and direction.
-      </p>
-
-      <span class="text-sm mb-6">Thursday, May 15 | 7:00 PM EST</span>
-
-      <button class="bg-[#DDA853] text-[#034647] px-6 py-3 rounded-xl font-semibold">
-        Book a free call
-      </button>
-    </div>
-
-  </div>
-</section>
+    item.addEventListener("mouseleave", () => {
+      gsap.to(icon, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.5)"
+      });
+    });
+  });
+});
+</script>

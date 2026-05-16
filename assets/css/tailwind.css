@@ -339,7 +339,22 @@ html.lenis body {
 }
 
 
+#lesson-slider {
+  overflow: hidden; /* 🔥 critical fix */
+}
 
+#lesson-slider .splide__track {
+  overflow: hidden;
+}
+
+#lesson-slider .splide__list {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+#lesson-slider .splide__slide {
+  box-sizing: border-box;
+}
   
 /* =========================
    RESPONSIVE

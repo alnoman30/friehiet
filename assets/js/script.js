@@ -329,3 +329,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateBars();
   });
+
+
+  // 
+  document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector(".values-section");
+  const items = section.querySelectorAll(".group");
+
+  /* ---------------------------
+     1. MOTION BLUR REVEAL
+  ----------------------------*/
+  gsap.from(items, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 75%",
+    },
+    opacity: 0,
+    y: 40,
+    filter: "blur(12px)",
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.08
+  });
+
+  /* ---------------------------
+     2. MAGNET EFFECT (SCOPED)
+  ----------------------------*/
+  items.forEach((item) => {
+    const icon = item.querySelector("svg");
+    let bounds;
+
+    item.addEventListener("mouseenter", () => {
+      bounds = item.getBoundingClientRect();
+    });
+
+    item.addEventListener("mousemove", (e) => {
+      const relX = e.clientX - bounds.left;
+      const relY = e.clientY - bounds.top;
+
+      const x = (relX - bounds.width / 2) * 0.2;
+      const y = (relY - bounds.height / 2) * 0.2;
+
+      gsap.to(icon, {
+        x,
+        y,
+        scale: 1.1,
+        duration: 0.4,
+        ease: "power3.out"
+      });
+    });
+
+    item.addEventListener("mouseleave", () => {
+      gsap.to(icon, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.5)"
+      });
+    });
+  });
+});
+
+// 
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('#lesson-slider', {
+    type: 'loop',
+    drag: 'free',
+    focus: 'center',
+    perPage: 4.5,
+    gap: '20px',
+    arrows: false,
+    pagination: false,
+    autoScroll: {
+      speed: 1,
+      pauseOnHover: true
+    },
+    breakpoints: {
+      1280: { perPage: 3 },
+      1024: { perPage: 2 },
+      640: { perPage: 1 }
+    }
+  }).mount();
+});
