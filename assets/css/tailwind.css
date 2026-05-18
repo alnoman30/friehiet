@@ -41,6 +41,7 @@ html {
   margin: auto;
   padding-inline: 20px;
 }
+
 .container {
   max-width: 1504px;
   width: 100%;
@@ -146,61 +147,62 @@ html.lenis body {
 ========================= */
 
 .custom-navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 100;
-    margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 64px;
 }
 
 .logo img {
-    display: block;
+  display: block;
 }
 
 .nav-links ul {
-    display: flex;
-    gap: 96px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 96px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20px;
-    font-family: "Archivo", sans-serif;
-    transition: linear 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Archivo", sans-serif;
+  transition: linear 0.3s ease;
 }
+
 .nav-links ul li a:hover {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 
 .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .call-btn {
-    background: var(--color-secondary);
-    color: var(--color-primary);
-    padding: 9px 24px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    text-decoration: none;
-    transition: 0.3s;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 9px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .call-btn:hover {
-    background-color: white;
-    color: var(--color-secondary);
+  background-color: white;
+  color: var(--color-secondary);
 }
 
 /* =========================
@@ -208,51 +210,51 @@ html.lenis body {
 ========================= */
 
 .menu-toggle {
-    width: 46px;
-    height: 46px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    display: none;
-    position: relative;
-    z-index: 1001;
+  width: 46px;
+  height: 46px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  z-index: 1001;
 }
 
 .menu-toggle span {
-    width: 28px;
-    height: 2px;
-    background: #fff;
-    position: absolute;
-    left: 9px;
-    transition: 0.4s ease;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 9px;
+  transition: 0.4s ease;
 }
 
 .menu-toggle span:nth-child(1) {
-    top: 14px;
+  top: 14px;
 }
 
 .menu-toggle span:nth-child(2) {
-    top: 22px;
+  top: 22px;
 }
 
 .menu-toggle span:nth-child(3) {
-    top: 30px;
+  top: 30px;
 }
 
 /* Active Icon */
 
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 22px;
+  transform: rotate(45deg);
+  top: 22px;
 }
 
 .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 22px;
+  transform: rotate(-45deg);
+  top: 22px;
 }
 
 /* =========================
@@ -260,71 +262,72 @@ html.lenis body {
 ========================= */
 
 .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #004350;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #004350;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
 }
 
 .mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .mobile-menu ul li {
-    margin: 24px 0;
+  margin: 24px 0;
 }
 
 .mobile-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 20px;
-    font-family: "Archivo", sans-serif;
-    transition: all linear .3s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Archivo", sans-serif;
+  transition: all linear .3s;
 }
+
 .mobile-menu ul li a:hover {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 
 /* gsap text hover animation */
 .gsap-text-hover {
-    position: relative;
-    display: inline-flex;
-    overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
 }
 
 /* this is the animation window */
 .gsap-text-hover-inner {
-    position: relative;
-    display: block;
-    overflow: hidden;
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 /* stack texts perfectly */
 .gsap-text-hover .text,
 .gsap-text-hover .text-hover {
-    display: block;
-    white-space: nowrap;
+  display: block;
+  white-space: nowrap;
 }
 
 /* second text starts below */
 .gsap-text-hover .text-hover {
-    position: absolute;
-    left: 0;
-    top: 100%;
+  position: absolute;
+  left: 0;
+  top: 100%;
 }
 
 /* hero title */
@@ -332,15 +335,16 @@ html.lenis body {
 
 
 /* the courses cards */
-.course-card{
-    position: sticky;
-    top:40px;
-    will-change: transform, opacity;
+.course-card {
+  position: sticky;
+  top: 40px;
+  will-change: transform, opacity;
 }
 
 
 #lesson-slider {
-  overflow: hidden; /* 🔥 critical fix */
+  overflow: hidden;
+  /* 🔥 critical fix */
 }
 
 #lesson-slider .splide__track {
@@ -355,35 +359,62 @@ html.lenis body {
 #lesson-slider .splide__slide {
   box-sizing: border-box;
 }
-  
+
+
+.splide__arrow {
+  background: white;
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s linear;
+}
+
+/* icon */
+.splide__arrow svg {
+  fill: var(--color-secondary);
+  transition: all 0.3s linear;
+}
+
+/* hover effect on button */
+.splide__arrow:hover {
+  background-color: var(--color-secondary);
+}
+
+/* change icon color when button is hovered */
+.splide__arrow:hover svg {
+  fill: white;
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 1200px) {
 
-    .nav-links ul{
-      gap: 60px;
-    }
+  .nav-links ul {
+    gap: 60px;
+  }
 }
+
 @media (max-width: 992px) {
 
-    .nav-links ul{
-      gap: 30px;
-    }
+  .nav-links ul {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 768px) {
 
-    .nav-links {
-        display: none;
-    }
+  .nav-links {
+    display: none;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    .call-btn {
-        padding: 10px 16px;
-        font-size: 13px;
-    }
+  .call-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
 }
