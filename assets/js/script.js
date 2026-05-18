@@ -196,7 +196,10 @@ gsap.from(".about-image img", {
 });
 
 
-// method card
+
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // keep your existing stagger animation as it is
   gsap.from(".method-single-card", {
     opacity: 0,
     y: 60,
@@ -212,33 +215,50 @@ gsap.from(".about-image img", {
     }
   });
 
+  // magnetic effect
+  const items = document.querySelectorAll(".magnet-item");
 
-  // method items
+  items.forEach((item) => {
+    const icon = item.querySelector("img");
+    let bounds;
 
-    gsap.set(".method-item", {
-        opacity: 0,
-        y: 40,
-        filter: "blur(12px)"
-    });
+    const onMove = (e) => {
+      const relX = e.clientX - bounds.left;
+      const relY = e.clientY - bounds.top;
 
-    gsap.to(".method-item", {
-        opacity: 1,
+      const x = (relX - bounds.width / 2) * 0.2;
+      const y = (relY - bounds.height / 2) * 0.2;
+
+      gsap.to(icon, {
+        x,
+        y,
+        scale: 1.1,
+        duration: 0.4,
+        ease: "power3.out"
+      });
+    };
+
+    const onEnter = () => {
+      bounds = item.getBoundingClientRect();
+      item.addEventListener("mousemove", onMove);
+    };
+
+    const onLeave = () => {
+      item.removeEventListener("mousemove", onMove);
+
+      gsap.to(icon, {
+        x: 0,
         y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
+        scale: 1,
+        duration: 0.6,
+        ease: "elastic.out(1, 0.5)"
+      });
+    };
 
-        scrollTrigger: {
-            trigger: ".method-list",
-            start: "top 80%",
-            toggleActions: "play none none none"
-        }
-    });
-
-
+    item.addEventListener("mouseenter", onEnter);
+    item.addEventListener("mouseleave", onLeave);
+  });
 });
-
 
 
 
@@ -575,4 +595,55 @@ document.addEventListener("DOMContentLoaded", () => {
     filter: "drop-shadow(0px 0px 0px #CBA34E)",
     duration: 0.4
   });
+});
+
+
+// testimonial slider
+document.addEventListener('DOMContentLoaded', function () {
+
+  const splide = new Splide('#reviews-slider', {
+    type: 'loop',
+    perPage: 2,
+    perMove: 1,
+    gap: '24px',
+    arrows: false,
+    pagination: false,
+    breakpoints: {
+      1024: { perPage: 2 },
+      768: { perPage: 1 },
+    },
+  });
+
+  const dynamicRating = document.getElementById('dynamic-rating');
+
+  function updateLeftCardDetails(index = splide.index) {
+    const slideObj = splide.Components?.Slides?.getAt(index);
+
+    if (!slideObj || !slideObj.slide) return;
+
+    const rating = slideObj.slide.getAttribute('data-rating');
+
+    if (rating && dynamicRating) {
+      dynamicRating.textContent = rating;
+    }
+  }
+
+  splide.on('mounted move', function () {
+    updateLeftCardDetails(splide.index);
+  });
+
+  splide.mount();
+
+  // buttons
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => splide.go('<'));
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => splide.go('>'));
+  }
+
 });
