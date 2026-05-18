@@ -195,11 +195,7 @@ gsap.from(".about-image img", {
   ease: "power4.out"
 });
 
-
-
-});
-document.addEventListener("DOMContentLoaded", () => {
-  // keep your existing stagger animation as it is
+// method card
   gsap.from(".method-single-card", {
     opacity: 0,
     y: 60,
@@ -210,6 +206,48 @@ document.addEventListener("DOMContentLoaded", () => {
     stagger: 0.2,
     scrollTrigger: {
       trigger: ".methos-card-wrap",
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
+
+
+  // method items
+
+    gsap.set(".method-item", {
+        opacity: 0,
+        y: 40,
+        filter: "blur(12px)"
+    });
+
+    gsap.to(".method-item", {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.1,
+
+        scrollTrigger: {
+            trigger: ".method-list",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+});
+document.addEventListener("DOMContentLoaded", () => {
+  // keep your existing stagger animation as it is
+  gsap.from(".structure-single-card", {
+    opacity: 0,
+    y: 60,
+    scale: 0.95,
+    filter: "blur(12px)",
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: ".structure-card-wrap",
       start: "top 80%",
       toggleActions: "play none none none"
     }
