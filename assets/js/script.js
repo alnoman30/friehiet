@@ -157,8 +157,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }
+// Hero stats
+  gsap.set(".stat-item", {
+    opacity: 0,
+    y: 24,
+  });
 
-
+  gsap.timeline({
+    defaults: {
+      ease: "power2.out",
+    }
+  })
+  .to(".stat-item", {
+    opacity: 1,
+    y: 0,
+    duration: 0.55,
+    stagger: 0.08,
+    clearProps: "all"
+  })
+  .from(".stat-number", {
+    scale: 0.92,
+    opacity: 0,
+    duration: 0.35,
+    stagger: 0.08,
+    ease: "power1.out"
+  }, "-=0.35");
   // ======================================================
   // STATS ANIMATION
   // ======================================================
@@ -180,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       scrollTrigger: {
         trigger: ".stats",
-        start: "top 80%",
+        start: "top 50%",
         end: "bottom 20%",
         toggleActions: "play none none none",
         once: true
@@ -385,37 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ======================================================
-  // COURSE STACK EFFECT
-  // ======================================================
-  const cards = gsap.utils.toArray(".course-card");
 
-  if (cards.length) {
-
-    cards.forEach((card, index) => {
-
-      gsap.set(card, {
-        zIndex: index + 1
-      });
-
-      gsap.to(card, {
-
-        scale: 1 - (cards.length - index) * 0.01,
-
-        ease: "none",
-
-        scrollTrigger: {
-          trigger: card,
-          start: "top center",
-          end: "top top+=120",
-          scrub: true,
-        }
-
-      });
-
-    });
-
-  }
 
 
   // ======================================================
@@ -626,62 +619,42 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======================================================
   // TESTIMONIAL SLIDER
   // ======================================================
-  if (
-    typeof Splide !== "undefined" &&
-    document.getElementById("reviews-slider")
-  ) {
+ if (
+  typeof Splide !== "undefined" &&
+  document.getElementById("reviews-slider")
+) {
 
-    const reviewSplide = new Splide("#reviews-slider", {
+  const reviewSplide = new Splide("#reviews-slider", {
 
-      type: "loop",
-      perPage: 2,
-      perMove: 1,
-      gap: "24px",
+    type: "loop",
+    perPage: 2,
+    perMove: 1,
+    gap: "24px",
 
-      arrows: false,
-      pagination: false,
+    arrows: false,
+    pagination: false,
 
-      breakpoints: {
-        1024: { perPage: 2 },
-        768: { perPage: 1 },
-      },
+    breakpoints: {
+      1024: { perPage: 2 },
+      768: { perPage: 1 },
+    },
 
-    });
+  });
 
-    const dynamicRating = document.getElementById("dynamic-rating");
+  reviewSplide.mount();
 
-    function updateLeftCardDetails(index = reviewSplide.index) {
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
 
-      const slideObj = reviewSplide.Components?.Slides?.getAt(index);
-
-      if (!slideObj || !slideObj.slide) return;
-
-      const rating = slideObj.slide.getAttribute("data-rating");
-
-      if (rating && dynamicRating) {
-        dynamicRating.textContent = rating;
-      }
-
-    }
-
-    reviewSplide.on("mounted move", function () {
-      updateLeftCardDetails(reviewSplide.index);
-    });
-
-    reviewSplide.mount();
-
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => reviewSplide.go("<"));
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => reviewSplide.go(">"));
-    }
-
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => reviewSplide.go("<"));
   }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => reviewSplide.go(">"));
+  }
+
+}
 
 
   // ======================================================

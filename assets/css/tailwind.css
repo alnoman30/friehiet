@@ -146,13 +146,36 @@ html.lenis body {
    NAVBAR
 ========================= */
 
+/* =========================
+   HERO LAYOUT
+========================= */
+
+.hero-section {
+  min-height: 100vh;
+}
+
+.hero-header {
+  flex-shrink: 0;
+}
+
+.hero-banner {
+  flex: 1;
+}
+
+.hero-stats {
+  flex-shrink: 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
 .custom-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: 100;
-  margin-bottom: 64px;
 }
 
 .logo img {
@@ -181,7 +204,6 @@ html.lenis body {
   color: var(--color-secondary);
 }
 
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -198,11 +220,6 @@ html.lenis body {
   line-height: 24px;
   text-decoration: none;
   transition: 0.3s;
-}
-
-.call-btn:hover {
-  background-color: white;
-  color: var(--color-secondary);
 }
 
 /* =========================
@@ -241,7 +258,7 @@ html.lenis body {
   top: 30px;
 }
 
-/* Active Icon */
+/* ACTIVE ICON */
 
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg);
@@ -301,6 +318,26 @@ html.lenis body {
   color: var(--color-secondary);
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .call-btn {
+    display: none;
+  }
+}
+
 
 /* gsap text hover animation */
 .gsap-text-hover {
@@ -335,11 +372,7 @@ html.lenis body {
 
 
 /* the courses cards */
-.course-card {
-  position: sticky;
-  top: 40px;
-  will-change: transform, opacity;
-}
+
 
 
 #lesson-slider {
@@ -386,7 +419,26 @@ html.lenis body {
   fill: white;
 }
 
+/* transformation */
+.transformation-list{
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 8px 24px;
+}
 
+/* 380px and above → 2 columns */
+@media (min-width: 380px) {
+  .transformation-list{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 768px and above → back to 1 column */
+@media (min-width: 768px) {
+  .transformation-list{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
 /* footer */
 /* =========================
    Footer
@@ -404,8 +456,7 @@ html.lenis body {
   }
 }
 
-
-
+/* MAIN GRID */
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -413,12 +464,18 @@ html.lenis body {
   padding-bottom: 48px;
 }
 
-@media (min-width: 768px) {
+/* 
+  DESKTOP ONLY
+  1200px+ = two column layout
+*/
+@media (min-width: 1200px) {
   .footer-grid {
     grid-template-columns: 360px 1fr;
+    align-items: start;
   }
 }
 
+/* LEFT CONTENT */
 .footer-title {
   margin-top: 60px;
   color: #ffffff;
@@ -430,28 +487,50 @@ html.lenis body {
 }
 
 .footer-highlight {
-  color: var(--color-secondary); /* secondary color */
+  color: var(--color-secondary);
   font-style: italic;
 }
 
+/* RIGHT CONTENT */
 .footer-right {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-
-@media (min-width: 768px) {
-  .footer-right {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.footer-column {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
+/* CONTACTS */
+.footer-contacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* 
+  640px+ = contacts side by side
+*/
+@media (min-width: 640px) {
+  .footer-contacts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* BOTTOM CONTENT */
+.footer-bottom-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+/* 
+  640px+ = description + links + account in row
+*/
+@media (min-width: 640px) {
+  .footer-bottom-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CONTACT BOX */
 .contact-box {
   display: flex;
   align-items: flex-start;
@@ -464,7 +543,7 @@ html.lenis body {
   justify-content: center;
   padding: 16px;
   border-radius: 12px;
-  background: var(--color-secondary); /* secondary color */
+  background: var(--color-secondary);
   flex-shrink: 0;
 }
 
@@ -475,14 +554,19 @@ html.lenis body {
   line-height: 130%;
 }
 
-.contact-text {
+.contact-text a {
   margin-top: 8px;
   color: #BFE0E6;
   font-size: 16px;
   font-weight: 400;
   line-height: 130%;
+  transition: all linear .3s;
+}
+.contact-text a:hover {
+  color: var(--color-secondary);
 }
 
+/* DESCRIPTION */
 .footer-description {
   color: #BFE0E6;
   font-size: 16px;
@@ -490,6 +574,7 @@ html.lenis body {
   line-height: 130%;
 }
 
+/* LINKS */
 .footer-heading {
   margin-bottom: 20px;
   color: #ffffff;
@@ -519,6 +604,7 @@ html.lenis body {
   color: var(--color-secondary);
 }
 
+/* COPYRIGHT */
 .copyright-footer {
   display: flex;
   align-items: center;
@@ -534,7 +620,6 @@ html.lenis body {
   line-height: 130%;
   margin: 0;
 }
-
 /* =========================
    RESPONSIVE
 ========================= */
@@ -565,5 +650,11 @@ html.lenis body {
   .call-btn {
     padding: 10px 16px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 400px){
+  .call-btn{
+    display: none;
   }
 }

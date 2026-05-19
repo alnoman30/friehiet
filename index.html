@@ -10,204 +10,255 @@
 </head>
 
 <body>
-  <!-- Main Hero Section -->
-  <section class="relative w-full overflow-hidden bg-cover bg-center text-white"
+
+  <!-- HERO WRAPPER -->
+  <section class="hero-section relative w-full overflow-hidden bg-cover bg-center text-white"
     style="background-image: url('assets/images/hero-person.webp');">
+
     <!-- Radial Gradient Overlay -->
-    <div class="absolute inset-0 z-0" style="
-          background: url('assets/images/radial-gradient.svg')
-            center/cover no-repeat;
-        "></div>
-
-    <!-- Content Wrapper -->
-    <div class="hero-container relative z-10 mx-auto px-6 py-8 flex flex-col min-h-screen">
-      <!-- Navigation -->
-      <nav class="custom-navbar border-b border-white/12 pb-7.5">
-        <div class="logo max-w-32.5">
-          <a href="index.html">
-            <img src="assets/images/logo.png" alt="logo" />
-          </a>
-        </div>
-
-        <!-- Desktop Menu -->
-        <div class="nav-links">
-          <ul>
-            <li>
-              <a href="#" class="gsap-text-hover">
-                <span class="gsap-text-hover-inner">
-                  <span class="text">About</span>
-                  <span class="text-hover">About</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="gsap-text-hover">
-                <span class="gsap-text-hover-inner">
-                  <span class="text">Courses</span>
-                  <span class="text-hover">Courses</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="gsap-text-hover">
-                <span class="gsap-text-hover-inner">
-                  <span class="text">Audio</span>
-                  <span class="text-hover">Audio</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="gsap-text-hover">
-                <span class="gsap-text-hover-inner">
-                  <span class="text">Listen Live</span>
-                  <span class="text-hover">Listen Live</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="gsap-text-hover">
-                <span class="gsap-text-hover-inner">
-                  <span class="text">Reviews</span>
-                  <span class="text-hover">Reviews</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Right Side -->
-        <div class="nav-actions gsap-text-hover">
-          <a href="#" class="call-btn">
-            <span class="gsap-text-hover-inner">
-              <span class="text">Book a free call</span>
-              <span class="text-hover">Book a free call</span>
-            </span>
-          </a>
-
-          <!-- Hamburger -->
-          <button class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Audio</a></li>
-            <li><a href="#">Listen Live</a></li>
-            <li><a href="#">Reviews</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- Hero Body -->
-      <div class="grow flex flex-col justify-center max-w-200">
-        <span
-          class="badge inline-block border border-dashed border-white/48 rounded-full px-3 py-1 font-archivo text-lg font-normal leading-6 mb-6 w-fit">
-          Torah Based Emotional
-        </span>
-
-        <h1
-          class="hero-title font-instrument text-[50px] md:text-[80px] font-normal leading-[110%] text-white uppercase mb-6">
-          THIS IS NOT THERAPY <br />
-          THIS IS
-          <span class="instrument-font-italic text-secondary">TRANSFORMATION</span>
-        </h1>
-
-        <!-- Features -->
-        <div class="flex flex-wrap gap-8 mb-6 text-lg font-medium leading-6">
-          <div class="flex items-center gap-3">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
-                <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
-              </svg>
-            </span>
-            1:1 Coaching
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
-                <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
-              </svg>
-            </span>
-            Relationship Support
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
-                <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
-              </svg>
-            </span>
-            Audio Courses
-          </div>
-        </div>
-
-        <p class="text-lg md:text-2xl text-white font-light leading-[130%] max-w-138.75 mb-8">
-          Guidance rewire your mind. Heal by moving forward. Live as the
-          person you were meant to be.
-        </p>
-        <a href="#"
-          class="gsap-text-hover px-5 sm:px-8 py-3.75 rounded-xl bg-secondary text-primary text-lg font-medium hover:bg-white hover:text-secondary transition duration-300 w-fit">
-          <span class="gsap-text-hover-inner">
-            <span class="text">Book a free call</span>
-            <span class="text-hover">Book a free call</span>
-          </span>
-        </a>
-      </div>
+    <div class="absolute inset-0 z-0"
+      style="background: url('assets/images/radial-gradient.svg') center/cover no-repeat;">
     </div>
-    <!-- Stats Footer -->
-    <div class="hero-container grid grid-cols-2 md:grid-cols-4 gap-8 py-12 mt-12 z-20 relative stats">
-      <div class="stat-item">
-        <div class="text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
-          90+
-        </div>
-        <div class="text-sm sm:text-lg font-archivo font-medium leading-6">
-          Guided Lessons
-        </div>
-      </div>
 
-      <div class="stat-item">
-        <div class="text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
-          Live
-        </div>
-        <div class="text-sm sm:text-lg font-archivo font-medium leading-6">
-          Real-time support and guidance
-        </div>
-      </div>
+    <!-- FULL HEIGHT LAYOUT -->
+    <div class="relative z-10 min-h-screen flex flex-col">
 
-      <div class="stat-item">
-        <div class="text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
-          90+
-        </div>
-        <div class="text-sm sm:text-lg font-archivo font-medium leading-6">
-          Guided Lessons
-        </div>
-      </div>
+      <!-- =========================
+         HEADER
+    ========================== -->
+      <header class="hero-header">
+        <div class="hero-container px-6 py-8">
 
-      <div class="stat-item">
-        <div class="text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
-          12+
+          <nav class="custom-navbar border-b border-white/12 pb-7.5">
+
+            <div class="logo max-w-32.5">
+              <a href="index.html">
+                <img src="assets/images/logo.png" alt="logo" />
+              </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="nav-links">
+              <ul>
+
+                <li>
+                  <a href="#" class="gsap-text-hover">
+                    <span class="gsap-text-hover-inner">
+                      <span class="text">About</span>
+                      <span class="text-hover">About</span>
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="gsap-text-hover">
+                    <span class="gsap-text-hover-inner">
+                      <span class="text">Courses</span>
+                      <span class="text-hover">Courses</span>
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="gsap-text-hover">
+                    <span class="gsap-text-hover-inner">
+                      <span class="text">Audio</span>
+                      <span class="text-hover">Audio</span>
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="gsap-text-hover">
+                    <span class="gsap-text-hover-inner">
+                      <span class="text">Listen Live</span>
+                      <span class="text-hover">Listen Live</span>
+                    </span>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="gsap-text-hover">
+                    <span class="gsap-text-hover-inner">
+                      <span class="text">Reviews</span>
+                      <span class="text-hover">Reviews</span>
+                    </span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+            <!-- Right Side -->
+            <div class="nav-actions gsap-text-hover">
+
+              <a href="#" class="call-btn">
+                <span class="gsap-text-hover-inner">
+                  <span class="text">Book a free call</span>
+                  <span class="text-hover">Book a free call</span>
+                </span>
+              </a>
+
+              <!-- Hamburger -->
+              <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Audio</a></li>
+                <li><a href="#">Listen Live</a></li>
+                <li><a href="#">Reviews</a></li>
+              </ul>
+            </div>
+
+          </nav>
+
         </div>
-        <div class="text-sm sm:text-lg font-archivo font-medium leading-6">
-          Core Values
+      </header>
+
+      <!-- =========================
+         HERO BANNER
+    ========================== -->
+      <section class="hero-banner flex-1 flex items-center">
+
+        <div class="hero-container mx-auto px-6 w-full">
+
+          <div class="max-w-200">
+
+            <span
+              class="badge inline-block border border-dashed border-white/48 rounded-full px-3 py-1 font-archivo text-lg font-normal leading-6 mb-6 w-fit">
+              Torah Based Emotional
+            </span>
+
+            <h1
+              class="hero-title font-instrument text-[50px] md:text-[80px] font-normal leading-[110%] text-white uppercase mb-6">
+              THIS IS NOT THERAPY <br />
+              THIS IS
+              <span class="instrument-font-italic text-secondary">
+                TRANSFORMATION
+              </span>
+            </h1>
+
+            <!-- Features -->
+            <div class="flex flex-wrap gap-8 mb-6 text-lg font-medium leading-6">
+
+              <div class="flex items-center gap-3">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
+                    <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+                1:1 Coaching
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
+                    <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+                Relationship Support
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="1" y="1" width="22" height="22" rx="11" stroke="white" stroke-width="2" />
+                    <path d="M7 11.3125L10.7557 17L20 3" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+                Audio Courses
+              </div>
+
+            </div>
+
+            <p class="text-lg md:text-2xl text-white font-light leading-[130%] max-w-138.75 mb-8">
+              Guidance rewire your mind. Heal by moving forward.
+              Live as the person you were meant to be.
+            </p>
+
+            <a href="#"
+              class="gsap-text-hover px-5 sm:px-8 py-2 sm:py-3.75 rounded-xl bg-secondary text-primary text-base sm:text-lg font-medium transition duration-300 w-fit">
+
+              <span class="gsap-text-hover-inner">
+                <span class="text">Book a free call</span>
+                <span class="text-hover">Book a free call</span>
+              </span>
+
+            </a>
+
+          </div>
+
         </div>
-      </div>
+
+      </section>
+
+      <!-- =========================
+         STATS SECTION
+    ========================== -->
+      <section class="hero-stats">
+
+        <div class="hero-container grid grid-cols-2 md:grid-cols-4 gap-8 py-8 md:py-12 px-6">
+
+          <div class="stat-item">
+            <div class="stat-number text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
+              90+
+            </div>
+
+            <div class="stat-text text-sm sm:text-lg font-archivo font-medium leading-6">
+              Guided Lessons
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
+              Live
+            </div>
+
+            <div class="stat-text text-sm sm:text-lg font-archivo font-medium leading-6">
+              Real-time support and guidance
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
+              90+
+            </div>
+
+            <div class="stat-text text-sm sm:text-lg font-archivo font-medium leading-6">
+              Guided Lessons
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
+              12+
+            </div>
+
+            <div class="stat-text text-sm sm:text-lg font-archivo font-medium leading-6">
+              Core Values
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
     </div>
   </section>
 
   <!-- About section -->
-  <section class="py-16 md:py-24">
+  <section class="py-10 md:py-24">
     <div class="container">
       <div class="flex flex-col lg:flex-row gap-5 lg:gap-8 justify-between ">
         <!-- left side content -->
@@ -230,21 +281,21 @@
             that changed my life.
           </p>
           <p class="text-gray text-[16px] sm:text-lg font-light leading-[150%]">
-            <span class="mt-7.5 block">
+            <span class="mt-4 sm:mt-7.5 block">
               I lived them. I breathed them. When I remembered them, life
               shined. When I forgot them, everything became difficult.
             </span>
 
-            <span class="mt-7.5 block">
+            <span class="mt-4 sm:mt-7.5 block">
               From these words came the
               <strong class="font-bold">12 Core Values</strong> I now teach —
               values that reshape the mind, bring emotional safety, create
               real connection, and rebuild life from the inside out.
             </span>
-            <span class="mt-7.5 block">
+            <span class="mt-4 sm:mt-7.5 block">
               This journey became something new. Not therapy. Not theory.
             </span>
-            <span class="mt-7.5 font-bold block">
+            <span class="mt-4 sm:mt-7.5 font-bold block">
               Something the world hasn’t experienced before.
             </span>
           </p>
@@ -254,110 +305,98 @@
   </section>
 
 
-<!-- Life method section -->
-<section class="bg-offwhite py-16 md:py-24">
-  <div class="container">
-    <div class="section-heading max-w-183.75 mx-auto text-center mb-12">
-      <h2
-        class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-110%">
-        The Life
-        <span class="text-secondary instrument-font-italic">Method</span>
-      </h2>
+  <!-- Life method section -->
+  <section class="bg-offwhite py-10 md:py-24">
+    <div class="container">
+      <div class="section-heading max-w-183.75 mx-auto text-center mb-12">
+        <h2
+          class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-12 md:leading-[110%]">
+          The Life
+          <span class="text-secondary instrument-font-italic">Method</span>
+        </h2>
 
-      <p class="text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
-        Everything begins with rewiring the mind — not by digging into old
-        pain, but by replacing broken wiring with clarity, truth, and
-        strength.
-      </p>
+        <p class="text-gray text-[16px] sm:text-xl font-normal leading-[150%] mt-6">
+          Everything begins with rewiring the mind — not by digging into old
+          pain, but by replacing broken wiring with clarity, truth, and
+          strength.
+        </p>
+      </div>
+
+      <!-- method cards -->
+      <div class="structure-card-wrap flex flex-col md:flex-row gap-6 lg:gap-8 items-stretch">
+
+        <!-- card 1 -->
+        <div class="structure-single-card flex-1">
+          <div
+            class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white  transition duration-600">
+
+            <!-- magnetic image -->
+            <div class="mb-6 magnet-item">
+              <img src="assets/images/Diamond.svg" alt="diamonds" class="will-change-transform" />
+            </div>
+
+            <h3 class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
+              12 Core Values
+            </h3>
+
+            <p class="text-lg font-light leading-[130%] text-gray">
+              These are not techniques or behaviours. They define who you are.
+              They create calm, confidence, connection, and emotional safety.
+            </p>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="structure-single-card flex-1">
+          <div
+            class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white  transition duration-600">
+
+            <!-- magnetic image -->
+            <div class="mb-6 magnet-item">
+              <img src="assets/images/light-bulb.svg" alt="light-bulb" class="will-change-transform" />
+            </div>
+
+            <h3 class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
+              Techniques
+            </h3>
+
+            <p class="text-lg font-light leading-[130%] text-gray">
+              Simple, practical guidance for communication, conflict,
+              emotional security, and living with strength and clarity.
+            </p>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="structure-single-card flex-1">
+          <div
+            class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white transition duration-600">
+
+            <!-- magnetic image -->
+            <div class="mb-6 magnet-item">
+              <img src="assets/images/up-right-arrow.svg" alt="up-arrow" class="will-change-transform" />
+            </div>
+
+            <h3 class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
+              Healing by Moving Forward
+            </h3>
+
+            <p class="text-lg font-light leading-[130%] text-gray">
+              Instead of reliving the past, healing happens by growing toward
+              who you are meant to become.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <!-- method cards -->
-    <div
-      class="structure-card-wrap flex flex-col md:flex-row gap-6 lg:gap-8 items-stretch">
-
-      <!-- card 1 -->
-      <div class="structure-single-card flex-1">
-        <div
-          class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white  transition duration-600">
-
-          <!-- magnetic image -->
-          <div class="mb-6 magnet-item">
-            <img
-              src="assets/images/Diamond.svg"
-              alt="diamonds"
-              class="will-change-transform" />
-          </div>
-
-          <h3
-            class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
-            12 Core Values
-          </h3>
-
-          <p class="text-lg font-light leading-[130%] text-gray">
-            These are not techniques or behaviours. They define who you are.
-            They create calm, confidence, connection, and emotional safety.
-          </p>
-        </div>
-      </div>
-
-      <!-- card 2 -->
-      <div class="structure-single-card flex-1">
-        <div
-          class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white  transition duration-600">
-
-          <!-- magnetic image -->
-          <div class="mb-6 magnet-item">
-            <img
-              src="assets/images/light-bulb.svg"
-              alt="light-bulb"
-              class="will-change-transform" />
-          </div>
-
-          <h3
-            class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
-            Techniques
-          </h3>
-
-          <p class="text-lg font-light leading-[130%] text-gray">
-            Simple, practical guidance for communication, conflict,
-            emotional security, and living with strength and clarity.
-          </p>
-        </div>
-      </div>
-
-      <!-- card 3 -->
-      <div class="structure-single-card flex-1">
-        <div
-          class="h-full flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl border-4 border-white transition duration-600">
-
-          <!-- magnetic image -->
-          <div class="mb-6 magnet-item">
-            <img
-              src="assets/images/up-right-arrow.svg"
-              alt="up-arrow"
-              class="will-change-transform" />
-          </div>
-
-          <h3
-            class="font-instrument text-[40px] text-primary font-normal leading-[110%] mb-4">
-            Healing by Moving Forward
-          </h3>
-
-          <p class="text-lg font-light leading-[130%] text-gray">
-            Instead of reliving the past, healing happens by growing toward
-            who you are meant to become.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- course structure section -->
-  <section class="py-16 md:py-24">
+  <section class="py-10 md:py-24">
     <div class="container">
-      <div class="flex flex-col lg:flex-row gap-10 lg:gap-7.5 items-start pb-12 border-b border-[#E6F2F4] mb-12.5">
+      <div
+        class="flex flex-col lg:flex-row gap-10 lg:gap-7.5 items-start pb-12 border-b border-[#E6F2F4] mb-4 sm:mb-12.5">
         <!-- left -->
         <div class="flex-1">
           <h2
@@ -378,92 +417,78 @@
           <ul class="space-y-2 method-list">
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Rooted in Torah wisdom — God’s understanding of the human mind
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Forward-focused, not past-focused
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Simple, powerful, and transformative
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Proven with countless individuals and families
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Endorsed by respected rabbinical authorities
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 Engaging, captivating, and deeply life-changing
               </span>
             </li>
             <li class="method-item flex items-center gap-4">
               <div class="shrink-0 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                  <path
-                    d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                    fill="#CBA34E" />
-                </svg>
+                <div class="w-6 h-6 sm:w-full sm:h-full">
+                  <img src="assets/images/checkmark.svg" alt="Checkmark">
+                </div>
               </div>
 
-              <span class="text-xl text-gray font-normal leading-[150%]">
+              <span class="text-base sm:text-xl text-gray font-normal leading-[150%]">
                 People don’t just learn this. They live it.
               </span>
             </li>
@@ -472,7 +497,7 @@
       </div>
 
       <!-- Stats Footer -->
-      <div class="hero-container grid grid-cols-2 md:grid-cols-4 gap-8 py-12 mt-12 z-20 relative stats text-primary">
+      <div class=" grid grid-cols-2 md:grid-cols-4 gap-8 py-0 sm:py-12  mt-0 sm:mt-12 z-20 relative stats text-primary">
         <div class="stat-item">
           <div class="text-[48px] font-normal leading-[110%] font-instrument mb-1.5">
             90+
@@ -513,8 +538,8 @@
   </section>
 
   <!-- The courses section -->
-  <section class="courses-section py-16 md:py-24" style="
-        background-image: url(&quot;assets/images/radianl-center.svg&quot;);
+  <section class="courses-section py-10 md:py-24" style="
+        background-image: url(/assets/images/radianl-center.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -545,7 +570,8 @@
         <!-- RIGHT -->
         <div class="courses-right flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           <!-- CARD -->
-          <div class="course-card flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl bg-white h-full">
+          <div
+            class="course-card flex flex-col items-center text-center p-4 sm:p-8 lg:p-12 rounded-3xl bg-white h-full">
             <div class="mb-6">
               <img src="assets/images/heart.svg" alt="heart" />
             </div>
@@ -561,7 +587,8 @@
           </div>
 
           <!-- CARD -->
-          <div class="course-card flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl bg-white h-full">
+          <div
+            class="course-card flex flex-col items-center text-center p-4 sm:p-8 lg:p-12 rounded-3xl bg-white h-full">
             <div class="mb-6">
               <img src="assets/images/eye.svg" alt="eye" />
             </div>
@@ -577,7 +604,8 @@
           </div>
 
           <!-- CARD -->
-          <div class="course-card flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl bg-white h-full">
+          <div
+            class="course-card flex flex-col items-center text-center p-4 sm:p-8 lg:p-12 rounded-3xl bg-white h-full">
             <div class="mb-6">
               <img src="assets/images/user.svg" alt="user" />
             </div>
@@ -593,7 +621,8 @@
           </div>
 
           <!-- CARD -->
-          <div class="course-card flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl bg-white h-full">
+          <div
+            class="course-card flex flex-col items-center text-center p-4 sm:p-8 lg:p-12 rounded-3xl bg-white h-full">
             <div class="mb-6">
               <img src="assets/images/mission.svg" alt="mission" />
             </div>
@@ -609,7 +638,8 @@
           </div>
 
           <!-- CARD -->
-          <div class="course-card flex flex-col items-center text-center p-8 lg:p-12 rounded-3xl bg-white h-full">
+          <div
+            class="course-card flex flex-col items-center text-center p-4 sm:p-8 lg:p-12 rounded-3xl bg-white h-full">
             <div class="mb-6">
               <img src="assets/images/shield.svg" alt="shield" />
             </div>
@@ -629,7 +659,7 @@
   </section>
 
   <!-- Audio play section -->
-  <section class="py-16 md:py-24">
+  <section class="py-10 md:py-24">
     <div class="container">
       <div class="section-heading max-w-183.75 mx-auto text-center mb-12">
         <h2 class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-110%">
@@ -789,9 +819,9 @@
 
   </section>
   <!--  Listen live -->
-  <section class="pb-16 md:pb-24">
+  <section class="pb-10 md:pb-24">
     <div
-      class="container mx-auto bg-softgreen rounded-4xl overflow-hidden flex flex-col md:flex-row items-stretch relative">
+      class="container bg-softgreen rounded-xl sm:rounded-2xl md:rounded-4xl overflow-hidden flex flex-col md:flex-row items-stretch relative">
       <!-- LEFT -->
       <div class="relative w-full md:w-1/2 flex items-end justify-center pt-12 md:pt-24 overflow-hidden">
         <!-- CENTER BARS -->
@@ -829,7 +859,7 @@
 
         <!-- FIXED GLOW (NOW CONSTRAINED TO CONTENT AREA) -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-          <div class="w-130 h-130 md:w-150 md:h-150 bg-[radial-gradient(circle,#CBA34E_0%,rgba(203,163,78,0)_70%)]">
+          <div class="w-60 h-60 md:w-150 md:h-150 bg-[radial-gradient(circle,#CBA34E_0%,rgba(203,163,78,0)_70%)]">
           </div>
         </div>
 
@@ -839,10 +869,10 @@
       </div>
 
       <!-- RIGHT -->
-      <div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white">
+      <div class="w-full md:w-1/2 p-2 sm:p-8 md:p-12 lg:p-16 flex flex-col justify-center text-white">
         <div class="mb-4">
           <span
-            class="inline-block border border-dashed border-white/48 rounded-full px-4 py-1 text-lg font-normal leading-6 uppercase">
+            class="inline-block border border-dashed border-white/48 rounded-full px-4 py-1 text-[12px] sm:text-lg font-normal leading-6 uppercase">
             Upcoming Live
           </span>
         </div>
@@ -852,29 +882,29 @@
           <span class="instrument-font-italic text-secondary">Live</span>
         </h2>
 
-        <h3 class="text-lg lg:text-2xl font-bold leading-[120%] mb-4">
+        <h3 class="text-sm sm:text-lg lg:text-2xl font-bold leading-6 sm:leading-[120%] mb-4">
           Rebuilding Clarity in Life & Relationships
         </h3>
 
-        <p class="text-[16px] lg:text-lg font-normal leading-[130%] text-[#BFE0E6] mb-6 max-w-160">
+        <p class="text-sm lg:text-lg font-normal leading-[130%] text-[#BFE0E6] mb-6 max-w-160">
           A live coaching session focused on understanding emotional patterns,
           finding direction, and creating healthier connections.
         </p>
 
         <div class="flex items-center space-x-2 mb-8">
-          <img src="assets/images/clock.svg" alt="clock" />
-          <span class="text-sm">Date & Time: Thursday, May 15 | 7:00 PM EST</span>
+          <div class="w-4 h-4 sm:w-6 sm:h-6"><img src="assets/images/clock.svg" alt="clock" /></div>
+          <span class=" text-[12px] sm:text-sm">Date & Time: Thursday, May 15 | 7:00 PM EST</span>
         </div>
 
         <a href="#"
-          class="gsap-text-hover px-5 sm:px-8 py-3.75 rounded-xl bg-secondary text-primary text-lg font-medium hover:bg-white hover:text-secondary transition duration-300 w-fit">
+          class="gsap-text-hover px-5 sm:px-8 py-2 sm:py-3.75 rounded-xl bg-secondary text-primary text-base sm:text-lg font-medium  transition duration-300 w-fit">
           <span class="gsap-text-hover-inner">
             <span class="text">Book a free call</span>
             <span class="text-hover">Book a free call</span>
           </span>
         </a>
 
-        <p class="text-[#BFE0E6] text-sm sm:text-lg font-normal leading-[130%] mt-3">
+        <p class="text-[#BFE0E6] text-sm sm:text-lg font-normal leading-[130%] mt-3 pb-5 sm:pb-0">
           Can’t make it live? Session recordings will be available after the live event.
         </p>
       </div>
@@ -883,7 +913,7 @@
 
 
   <!-- what you will learn -->
-  <section class="pb-16 md:pb-24 values-section">
+  <section class="pb-10 md:pb-24 values-section">
     <div class="container text-center">
 
       <p class="text-sm sm:text-[16px] font-normal leading-[130%] text-secondary tracking-[1.6px] uppercase mb-4.5">
@@ -983,7 +1013,7 @@
 
 
   <!--course lession plan slider section -->
-  <section class="py-16 md:py-24 bg-offwhite">
+  <section class="py-10 md:py-24 bg-offwhite">
     <div class="container">
 
       <div class="text-center mb-12">
@@ -1104,7 +1134,7 @@
 
 
   <!-- transformation -->
-  <section class="pt-16 md:pt-24">
+  <section class="pt-10 md:pt-24">
     <div class="container ">
 
       <p class="text-secondary text-[16px] font-normal leading-[130%] tracking-[1.6px] uppercase mb-4.5">
@@ -1112,7 +1142,7 @@
       </p>
 
       <h2
-        class="text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-[110%] font-instrument max-w-184 mb-12">
+        class="text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-12 md:leading-[110%] font-instrument max-w-184 mb-12">
         The <span class="text-secondary instrument-font-italic">Shift</span> From Control to Calm Confidence
       </h2>
 
@@ -1124,8 +1154,7 @@
               class="w-full h-full object-cover">
           </div>
           <h3 class="text-primary text-3xl md:text-[40px] font-instrument font-normal leading-[110%] mb-6">Before</h3>
-          <ul
-            class="text-gray text-[16px] sm:text-xl font-normal leading-[150%] grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2">
+          <ul class="transformation-list text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
             <li>Reactive</li>
             <li>Insecure</li>
             <li>Controlling</li>
@@ -1145,8 +1174,7 @@
               class="w-full h-full object-cover">
           </div>
           <h3 class="text-primary text-3xl md:text-[40px] font-instrument font-normal leading-[110%] mb-6">After</h3>
-          <ul
-            class="text-gray text-[16px] sm:text-xl font-normal leading-[150%] grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2">
+          <ul class="transformation-list text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
             <li>Calm</li>
             <li>Self-accepting</li>
             <li>Flexible</li>
@@ -1166,8 +1194,7 @@
           </div>
           <h3 class="text-primary text-3xl md:text-[40px] font-instrument font-normal leading-[110%] mb-6">Life Forward
           </h3>
-          <ul
-            class="text-gray text-[16px] sm:text-xl font-normal leading-[150%] grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2">
+          <ul class="transformation-list text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
             <li>Clear choices</li>
             <li>Healthier relationships</li>
             <li>Stronger communication</li>
@@ -1186,7 +1213,7 @@
   </section>
 
   <!-- Community for growth section -->
-  <section class="pt-16 md:pt-24">
+  <section class="pt-10 md:pt-24">
     <div class="container mx-auto">
       <div
         class="relative bg-softgreen rounded-4xl overflow-hidden px-8 py-12 md:px-16 md:py-20 flex flex-col md:flex-row items-center justify-between gap-12 ">
@@ -1194,20 +1221,20 @@
         <!-- left content -->
         <div class="w-full md:w-1/2 flex flex-col justify-center text-white z-10">
           <div
-            class="inline-block self-start border border-dashed border-white/48 rounded-full px-4 py-1 text-[12px] sm:text-[18px] font-medium leading-6  mb-4.5">
+            class="inline-block self-start border border-dashed border-white/48 rounded-full px-4 py-1 text-[10px] sm:text-[18px] font-medium leading-6  mb-4.5">
             COMING SOON: The Derech HaNefesh Community
           </div>
 
           <h2
-            class="text-[45px] sm:text-[54px] md:text-[72px] font-instrument text-white font-normal leading-[110%] mb-8">
+            class="text-[45px] sm:text-[54px] md:text-[72px] font-instrument text-white font-normal leading-12 md:leading-[110%] mb-6 sm:mb-8">
             <span class="text-secondary instrument-font-italic">Community</span> for Growth
           </h2>
 
-          <p class="text-[#BFE0E6] text-lg sm:text-xl font-normal leading-[130%] mb-8">
+          <p class="text-[#BFE0E6] text-base sm:text-lg md:text-xl font-normal leading-[130%] mb-6 sm:mb-8">
             A safe, private space to ask questions, share wins, and grow together with others on the same journey.
           </p>
 
-          <ul class="space-y-3">
+          <ul class=" space-y-2 sm:space-y-3">
             <li class="flex items-center gap-3 text-[#BFE0E6] text-[14px] sm:text-lg font-medium leading-6">
               <span class="flex items-center justify-center w-5 h-5 rounded-full border border-slate-300 text-xs">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1317,7 +1344,7 @@
   </section>
 
   <!-- Simple access/flexible learning section -->
-  <section class="py-16 md:py-24">
+  <section class="py-10 md:py-24">
     <div class="container">
       <div class="flex flex-col lg:flex-row gap-5 lg:gap-8 justify-between ">
         <!-- left side content -->
@@ -1327,25 +1354,23 @@
         <!-- right side content -->
         <div class="max-w-183.75">
           <h2
-            class="text-[45px] sm:text-[54px] md:text-[72px] font-instrument font-normal text-primary leading-[110%] mb-8">
+            class="text-[45px] sm:text-[54px] md:text-[72px] font-instrument font-normal text-primary leading-[110%] mb-5 sm:mb-8">
             Simple Access,
             <span class="instrument-font-italic text-secondary">Flexible</span>
             Learning
           </h2>
-          <p class="text-gray text-lg sm:text-xl font-normal leading-[150%] mb-8">
+          <p class="text-gray text-lg sm:text-xl font-normal leading-[150%] mb-4 sm:mb-8">
             Start your transformation journey with simple access to practical lessons, guided support, and flexible
             learning designed to help you grow with clarity, confidence, and emotional strength at your own pace.
           </p>
 
-          <div class="mt-8.75">
+          <div class="mt-4 sm:mt-8.75">
             <ul class="space-y-2 method-list">
               <li class="method-item flex items-center gap-4">
                 <div class="shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                    <path
-                      d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                      fill="#CBA34E" />
-                  </svg>
+                  <div class="w-6 h-6 sm:w-full sm:h-full">
+                    <img src="assets/images/checkmark.svg" alt="Checkmark">
+                  </div>
                 </div>
 
                 <span class="text-[16px] sm:text-xl text-gray font-normal leading-[150%]">
@@ -1354,11 +1379,9 @@
               </li>
               <li class="method-item flex items-center gap-4">
                 <div class="shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                    <path
-                      d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                      fill="#CBA34E" />
-                  </svg>
+                  <div class="w-6 h-6 sm:w-full sm:h-full">
+                    <img src="assets/images/checkmark.svg" alt="Checkmark">
+                  </div>
                 </div>
 
                 <span class="text-[16px] sm:text-xl text-gray font-normal leading-[150%]">
@@ -1367,11 +1390,9 @@
               </li>
               <li class="method-item flex items-center gap-4">
                 <div class="shrink-0 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                    <path
-                      d="M27.6081 13.4176L23.0017 4.73135C22.4362 3.6633 21.3377 3 20.1352 3H9.89C8.69074 3 7.59331 3.66112 7.02564 4.7259L2.3965 13.4165C1.86783 14.4103 1.86783 15.5973 2.3965 16.5923L7.02347 25.2741C7.59006 26.3389 8.68749 27 9.88783 27H20.133C21.3355 27 22.434 26.3367 22.9995 25.2686L27.6059 16.5824C28.1314 15.5918 28.1314 14.4082 27.6059 13.4176H27.6081ZM14.9026 18.7305C14.4845 19.1527 13.932 19.3633 13.3784 19.3633C12.8248 19.3633 12.2679 19.1506 11.8444 18.7251L8.83049 15.7839L10.3385 14.2161L13.3643 17.1694L19.6574 10.9498L21.1784 12.5044L14.9026 18.7305Z"
-                      fill="#CBA34E" />
-                  </svg>
+                  <div class="w-6 h-6 sm:w-full sm:h-full">
+                    <img src="assets/images/checkmark.svg" alt="Checkmark">
+                  </div>
                 </div>
 
                 <span class="text-[16px] sm:text-xl text-gray font-normal leading-[150%]">
@@ -1383,7 +1404,7 @@
 
           <div class="mt-8.75">
             <a href="payment.html"
-              class="gsap-text-hover px-5 sm:px-8 py-3.75 rounded-xl bg-secondary text-primary text-lg font-medium hover:bg-primary hover:text-secondary transition duration-300 w-fit">
+              class="gsap-text-hover px-5 sm:px-8 py-2 sm:py-3.75 rounded-xl bg-secondary text-primary text-base sm:text-lg font-medium  transition duration-300 w-fit">
               <span class="gsap-text-hover-inner">
                 <span class="text">Buy Now</span>
                 <span class="text-hover">Buy Now</span>
@@ -1402,10 +1423,11 @@
     <div class="container ">
 
       <div class="section-heading max-w-183.75 mx-auto text-center mb-12">
-        <h2 class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-110%">
+        <h2
+          class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-12 md:leading-[110%]">
           <span class="text-secondary instrument-font-italic">Reviews</span> From Real People
         </h2>
-        <p class="text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
+        <p class="text-gray text-[16px] sm:text-xl font-normal leading-[150%] mt-6">
           Guided lessons, reflections, and healing content to support your growth anytime.
         </p>
       </div>
@@ -1415,7 +1437,7 @@
         <!-- LEFT CARD -->
         <div class="lg:col-span-1">
           <div
-            class="bg-[#0c4a4f] rounded-3xl p-8 flex flex-col justify-between items-center text-center h-full relative overflow-hidden shadow-lg min-h-100">
+            class="bg-[#0c4a4f] rounded-3xl p-8 flex flex-col justify-between items-center text-center h-full relative overflow-hidden shadow-lg min-h-50 md:min-h-100">
 
             <div
               class="absolute top-0 left-0 right-0  bg-linear-to-b from-secondary/70 to-transparent flex justify-center gap-1.5 px-12 pointer-events-none">
@@ -1425,7 +1447,7 @@
             <!-- ONLY RATING -->
             <div class="my-auto pt-12 relative z-10">
               <span id="dynamic-rating"
-                class="text-[72px] font-normal leading-[110%] font-instrument text-white block transition-all duration-300">
+                class="text-[54px] md:text-[72px] font-normal leading-[110%] font-instrument text-white block transition-all duration-300">
                 4.6
               </span>
               <p class="text-lg font-normal leading-[150%]  text-white mb-3">377 reviews</p>
@@ -1459,23 +1481,23 @@
             <div class="splide__track h-full">
               <ul class="splide__list flex items-stretch h-full">
 
-                <li class="splide__slide h-auto" data-rating="4.6">
+                <li class="splide__slide h-auto">
                   <div
-                    class="bg-[#FBF9F8] rounded-3xl p-8 flex flex-col justify-between h-full  border-4 border-white  min-h-100">
+                    class="bg-[#FBF9F8] rounded-3xl p-5 sm:p-8 flex flex-col justify-between h-full  border-4 border-white min-h-50 md:min-h-100">
                     <div>
-                      <div class="flex items-center gap-0.5 mb-8 ">
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
+                      <div class="flex items-center gap-0.5 mb-4 md:mb-8 ">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
                       </div>
 
                       <h4 class="text-2xl font-bold leading-[120%] text-primary mb-4">
                         Calm, Confidence, and Real Connection
                       </h4>
 
-                      <p class="text-xl text-gray font-normal leading-[120%]">
+                      <p class="text-lg sm:text-xl text-gray font-normal leading-[120%]">
                         I've tried many emotional programs before, but nothing clicked like this. The forward-focused
                         approach brought calm, confidence, and real connection into my life
                       </p>
@@ -1484,32 +1506,30 @@
                     <div class="flex justify-between items-end mt-8">
                       <span class="text-xl font-bold leading-[120%] text-gray">Katherine</span>
                       <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="69" height="60" viewBox="0 0 69 60" fill="none">
-                          <path
-                            d="M6.10387 58.476C3.98079 60.0564 2.30009 60.4077 1.06163 59.5296C0.353938 59.0028 0 58.3004 0 57.4224C0 56.3688 0.619335 55.403 1.8578 54.5249C7.87318 49.4324 11.6769 45.3935 13.2693 42.4083C15.0385 39.2474 15.9231 36.5256 15.9231 34.2427C15.9231 31.0818 15.2155 28.7112 13.8001 27.1308C12.3847 25.3747 10.7924 23.9699 9.02318 22.9163C7.25395 21.687 5.66157 20.2822 4.24618 18.7018C2.8308 17.1214 2.12315 14.7507 2.12315 11.5898C2.12315 8.42896 3.27316 5.70711 5.57316 3.42427C7.87316 1.14142 10.9693 0 14.8616 0C19.2847 0 22.7347 1.58043 25.2116 4.7413C27.8655 7.90217 29.1924 12.2045 29.1924 17.6482C29.1924 25.7259 27.4231 33.1013 23.8847 39.7742C20.3462 46.4472 14.4193 52.6811 6.10387 58.476ZM45.9116 58.476C43.7885 60.0564 42.1077 60.4077 40.8693 59.5296C40.1616 59.0028 39.8078 58.3004 39.8078 57.4224C39.8078 56.3688 40.427 55.403 41.6654 54.5249C47.6808 49.4324 51.4847 45.3935 53.077 42.4083C54.8462 39.2474 55.7309 36.5256 55.7309 34.2427C55.7309 31.0818 55.0231 28.7112 53.6077 27.1308C52.1923 25.3747 50.6001 23.9699 48.8308 22.9163C47.0616 21.687 45.4693 20.2822 44.0539 18.7018C42.6386 17.1214 41.9308 14.7507 41.9308 11.5898C41.9308 8.42896 43.0808 5.70711 45.3808 3.42427C47.6808 1.14142 50.7769 0 54.6692 0C59.0923 0 62.5424 1.58043 65.0193 4.7413C67.6731 7.90217 69 12.2045 69 17.6482C69 25.7259 67.2309 33.1013 63.6924 39.7742C60.1539 46.4472 54.227 52.6811 45.9116 58.476Z"
-                            fill="#B58E3A" />
-                        </svg>
+                        <div>
+                          <img src="assets/images/quotes.svg" alt="quotes" class="w-6 h-6 sm:w-full sm:h-full">
+                        </div>
                       </span>
                     </div>
                   </div>
                 </li>
-                <li class="splide__slide h-auto" data-rating="4.5">
+                <li class="splide__slide h-auto">
                   <div
-                    class="bg-[#FBF9F8] rounded-3xl p-8 flex flex-col justify-between h-full border-4 border-white  min-h-100">
+                    class="bg-[#FBF9F8] rounded-3xl p-5 sm:p-8 flex flex-col justify-between h-full  border-4 border-white min-h-50 md:min-h-100">
                     <div>
-                      <div class="flex items-center gap-0.5 mb-8 ">
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
-                        <div><img src="assets/images/rating-star.svg" alt="rating"></div>
+                      <div class="flex items-center gap-0.5 mb-4 md:mb-8 ">
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8"><img src="assets/images/rating-star.svg" alt="rating"></div>
                       </div>
 
                       <h4 class="text-2xl font-bold leading-[120%] text-primary mb-4">
                         Calm, Confidence, and Real Connection
                       </h4>
 
-                      <p class="text-xl text-gray font-normal leading-[120%]">
+                      <p class="text-lg sm:text-xl text-gray font-normal leading-[120%]">
                         I've tried many emotional programs before, but nothing clicked like this. The forward-focused
                         approach brought calm, confidence, and real connection into my life
                       </p>
@@ -1518,17 +1538,13 @@
                     <div class="flex justify-between items-end mt-8">
                       <span class="text-xl font-bold leading-[120%] text-gray">Katherine</span>
                       <span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="69" height="60" viewBox="0 0 69 60" fill="none">
-                          <path
-                            d="M6.10387 58.476C3.98079 60.0564 2.30009 60.4077 1.06163 59.5296C0.353938 59.0028 0 58.3004 0 57.4224C0 56.3688 0.619335 55.403 1.8578 54.5249C7.87318 49.4324 11.6769 45.3935 13.2693 42.4083C15.0385 39.2474 15.9231 36.5256 15.9231 34.2427C15.9231 31.0818 15.2155 28.7112 13.8001 27.1308C12.3847 25.3747 10.7924 23.9699 9.02318 22.9163C7.25395 21.687 5.66157 20.2822 4.24618 18.7018C2.8308 17.1214 2.12315 14.7507 2.12315 11.5898C2.12315 8.42896 3.27316 5.70711 5.57316 3.42427C7.87316 1.14142 10.9693 0 14.8616 0C19.2847 0 22.7347 1.58043 25.2116 4.7413C27.8655 7.90217 29.1924 12.2045 29.1924 17.6482C29.1924 25.7259 27.4231 33.1013 23.8847 39.7742C20.3462 46.4472 14.4193 52.6811 6.10387 58.476ZM45.9116 58.476C43.7885 60.0564 42.1077 60.4077 40.8693 59.5296C40.1616 59.0028 39.8078 58.3004 39.8078 57.4224C39.8078 56.3688 40.427 55.403 41.6654 54.5249C47.6808 49.4324 51.4847 45.3935 53.077 42.4083C54.8462 39.2474 55.7309 36.5256 55.7309 34.2427C55.7309 31.0818 55.0231 28.7112 53.6077 27.1308C52.1923 25.3747 50.6001 23.9699 48.8308 22.9163C47.0616 21.687 45.4693 20.2822 44.0539 18.7018C42.6386 17.1214 41.9308 14.7507 41.9308 11.5898C41.9308 8.42896 43.0808 5.70711 45.3808 3.42427C47.6808 1.14142 50.7769 0 54.6692 0C59.0923 0 62.5424 1.58043 65.0193 4.7413C67.6731 7.90217 69 12.2045 69 17.6482C69 25.7259 67.2309 33.1013 63.6924 39.7742C60.1539 46.4472 54.227 52.6811 45.9116 58.476Z"
-                            fill="#B58E3A" />
-                        </svg>
+                        <div>
+                          <img src="assets/images/quotes.svg" alt="quotes" class="w-6 h-6 sm:w-full sm:h-full">
+                        </div>
                       </span>
                     </div>
                   </div>
                 </li>
-
-
 
               </ul>
             </div>
@@ -1544,16 +1560,17 @@
   <section class="bg-softgreen py-16 md:py-24 border-b border-white/12">
     <div class="container">
       <div class="footer-card-banner  mx-auto text-center  max-w-248 mb-12">
-        <h2 class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-white font-normal leading-110%">
-          <span class="text-secondary instrument-font-italic">Reviews</span> From Real People
+        <h2
+          class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-white font-normal leading-12 md:leading-[110%]">
+          <span class="text-secondary instrument-font-italic">Ready</span> to rewire your foundation
         </h2>
-        <p class="text-[#BFE0E6] text-[16px] sm:text-xl font-normal leading-[150%]">
+        <p class="text-[#BFE0E6] text-[16px] sm:text-xl font-normal leading-[150%] mt-6">
           Become the strong, calm, and grounded version of yourself with practical guidance that helps you build
           clarity, emotional strength, and lasting confidence in everyday life.
         </p>
         <div>
           <a href="#"
-            class="gsap-text-hover px-5 sm:px-8 py-3.75 rounded-xl bg-secondary text-primary text-lg font-medium hover:bg-white hover:text-secondary transition duration-300 w-fit mt-8">
+            class="gsap-text-hover px-5 sm:px-8 py-2 sm:py-3.75 rounded-xl bg-secondary text-primary text-base sm:text-lg font-medium  transition duration-300 w-fit mt-8">
             <span class="gsap-text-hover-inner">
               <span class="text">Book A Free Call</span>
               <span class="text-hover">Book A Free Call</span>
@@ -1565,133 +1582,142 @@
   </section>
 
 
-<!-- Footer section -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+  <!-- Footer section -->
+  <footer class="footer">
+    <div class="container">
 
-      <!-- left content -->
-      <div>
-        <img src="assets/images/logo.png" alt="logo">
+      <div class="footer-grid">
 
-        <p class="footer-title">
-          This is Not Therapy <br>
-          This is
-          <span class="footer-highlight">
-            Transformation
-          </span>
-        </p>
-      </div>
+        <!-- LEFT CONTENT -->
+        <div>
+          <img src="assets/images/logo.png" alt="logo">
 
-      <!-- right content -->
-      <div class="footer-right">
-
-        <!-- column 1 -->
-        <div class="footer-column">
-
-          <!-- contact -->
-          <div class="contact-box">
-            <div class="icon-box">
-              <img src="assets/images/email.svg" alt="email">
-            </div>
-
-            <div>
-              <h3 class="contact-title">
-                Email address
-              </h3>
-
-              <p class="contact-text">
-                mentor@thefreiheitcourse.com
-              </p>
-            </div>
-          </div>
-
-          <!-- description -->
-          <p class="footer-description">
-            A transformational program teaching 12 Core
-            Foundations that rewire your emotions, reactions,
-            and relationships from the inside out.
+          <p class="footer-title">
+            This is Not Therapy <br>
+            This is
+            <span class="footer-highlight">
+              Transformation
+            </span>
           </p>
         </div>
 
-        <!-- column 2 -->
-        <div class="footer-column">
+        <!-- RIGHT CONTENT -->
+        <div class="footer-right">
 
-          <!-- contact -->
-          <div class="contact-box">
-            <div class="icon-box">
-              <img src="assets/images/whatsapp.svg" alt="whatsapp">
+          <!-- CONTACTS -->
+          <div class="footer-contacts">
+
+            <!-- EMAIL -->
+            <div class="contact-box">
+              <div class="icon-box">
+                <img src="assets/images/email.svg" alt="email">
+              </div>
+
+              <div>
+                <h3 class="contact-title">
+                  Email address
+                </h3>
+
+                <p class="contact-text">
+                  <a href="mailto:mentor@thefreiheitcourse.com">
+                    mentor@thefreiheitcourse.com
+                  </a>
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h3 class="contact-title">
-                WhatsApp
-              </h3>
+            <!-- WHATSAPP -->
+            <div class="contact-box">
+              <div class="icon-box">
+                <img src="assets/images/whatsapp.svg" alt="whatsapp">
+              </div>
 
-              <p class="contact-text">
-                1845-923-4200
+              <div>
+                <h3 class="contact-title">
+                  WhatsApp
+                </h3>
+
+                <p class="contact-text">
+                  <a href="https://wa.me/18459234200" target="_blank">
+                    1845-923-4200
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="contact-box">
+              <div class="icon-box">
+                <img src="assets/images/call.svg" alt="phone">
+              </div>
+
+              <div>
+                <h3 class="contact-title">
+                  Phone
+                </h3>
+
+                <p class="contact-text">
+                  <a href="tel:845-459-8898">
+                    845-459-8898 EXT #7
+                  </a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BOTTOM CONTENT -->
+          <div class="footer-bottom-content">
+
+            <!-- DESCRIPTION -->
+            <div>
+              <p class="footer-description">
+                A transformational program teaching 12 Core
+                Foundations that rewire your emotions, reactions,
+                and relationships from the inside out.
               </p>
             </div>
-          </div>
 
-          <!-- links -->
-          <div>
-            <h4 class="footer-heading">
-              Useful Links
-            </h4>
-
-            <ul class="footer-links">
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Cookies</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- column 3 -->
-        <div class="footer-column">
-
-          <!-- contact -->
-          <div class="contact-box">
-            <div class="icon-box">
-              <img src="assets/images/call.svg" alt="phone">
-            </div>
-
+            <!-- USEFUL LINKS -->
             <div>
-              <h3 class="contact-title">
-                Phone
-              </h3>
+              <h4 class="footer-heading">
+                Useful Links
+              </h4>
 
-              <p class="contact-text">
-                845-459-8898 EXT #7
-              </p>
+              <ul class="footer-links">
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookies</a></li>
+              </ul>
             </div>
+
+            <!-- ACCOUNT -->
+            <div>
+              <h4 class="footer-heading">
+                Account
+              </h4>
+
+              <ul class="footer-links">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Orders</a></li>
+              </ul>
+            </div>
+
           </div>
 
-          <!-- account -->
-          <div>
-            <h4 class="footer-heading">
-              Account
-            </h4>
-
-            <ul class="footer-links">
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Orders</a></li>
-            </ul>
-          </div>
         </div>
 
       </div>
-    </div>
 
-    <div class="copyright-footer">
-      <p class="copyright-text">
-        &copy; 2026 The Freiheit Course — All rights reserved.
-      </p>
-    </div>
+      <!-- COPYRIGHT -->
+      <div class="copyright-footer">
+        <p class="copyright-text">
+          &copy; 2026 The Freiheit Course — All rights reserved.
+        </p>
+      </div>
 
-  </div>
-</footer>
+    </div>
+  </footer>
 
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
