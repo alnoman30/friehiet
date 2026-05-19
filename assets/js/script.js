@@ -1,10 +1,8 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-
-
-// =========================
-// LENIS (smooth scroll)
-// =========================
+// ======================================================
+// LENIS SMOOTH SCROLL
+// ======================================================
 if (typeof Lenis !== "undefined") {
 
   const lenis = new Lenis({
@@ -23,17 +21,14 @@ if (typeof Lenis !== "undefined") {
 }
 
 
-
-// =========================
+// ======================================================
 // DOM READY
-// =========================
+// ======================================================
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
-  // =========================
+  // ======================================================
   // MOBILE MENU
-  // =========================
+  // ======================================================
   const menuToggle = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
 
@@ -41,11 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let open = false;
 
-    gsap.set(mobileMenu, { autoAlpha: 0 });
+    gsap.set(mobileMenu, {
+      autoAlpha: 0
+    });
 
     menuToggle.addEventListener("click", () => {
 
       open = !open;
+
       menuToggle.classList.toggle("active");
 
       if (open) {
@@ -56,13 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "power3.out"
         });
 
-        gsap.from(".mobile-menu li", {
-          y: 20,
-          opacity: 0,
-          stagger: 0.08,
-          duration: 0.5,
-          ease: "power3.out"
-        });
+        if (document.querySelector(".mobile-menu li")) {
+          gsap.from(".mobile-menu li", {
+            y: 20,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.5,
+            ease: "power3.out"
+          });
+        }
 
       } else {
 
@@ -73,18 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
       }
+
     });
+
   }
 
 
-
-  // =========================
+  // ======================================================
   // HOVER TEXT ANIMATION
-  // =========================
+  // ======================================================
   document.querySelectorAll(".gsap-text-hover").forEach((item) => {
 
     const text = item.querySelector(".text");
     const hover = item.querySelector(".text-hover");
+
+    if (!text || !hover) return;
 
     item.addEventListener("mouseenter", () => {
 
@@ -109,11 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
-  // =========================
-  // HERO TITLE (SplitText)
-  // =========================
-  if (document.querySelector(".hero-title") && typeof SplitText !== "undefined") {
+  // ======================================================
+  // HERO TITLE
+  // ======================================================
+  if (
+    document.querySelector(".hero-title") &&
+    typeof SplitText !== "undefined"
+  ) {
 
     const split = new SplitText(".hero-title", {
       type: "chars"
@@ -137,130 +142,177 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
-  // =========================
+  // ======================================================
   // BADGE ANIMATION
-  // =========================
-  gsap.from(".badge", {
-    opacity: 0,
-    y: 25,
-    scale: 0.85,
-    filter: "blur(10px)",
-    duration: 1,
-    ease: "power4.out"
-  });
+  // ======================================================
+  if (document.querySelector(".badge")) {
 
+    gsap.from(".badge", {
+      opacity: 0,
+      y: 25,
+      scale: 0.85,
+      filter: "blur(10px)",
+      duration: 1,
+      ease: "power4.out"
+    });
 
-
-  // =========================
-  // STATS SCROLL ANIMATION
-  // =========================
-gsap.from(".stats .stat-item", {
-  opacity: 0,
-  y: 60,
-  scale: 0.92,
-  filter: "blur(10px)",
-
-  duration: 1.1,
-  ease: "power4.out",
-  stagger: {
-    amount: 0.6,
-    from: "start"
-  },
-
-  scrollTrigger: {
-    trigger: ".stats",
-    start: "top 80%", 
-    end: "bottom 20%",
-    toggleActions: "play none none none",
-    once: true
   }
-});
 
 
-// about image
-gsap.from(".about-image img", {
-  scrollTrigger: {
-    trigger: ".about-image",
-    start: "top 70%",
-    toggleActions: "play none none reverse"
-  },
+  // ======================================================
+  // STATS ANIMATION
+  // ======================================================
+  if (document.querySelector(".stats .stat-item")) {
 
-  opacity: 0,
-  y: 90,
-  scale: 1.06,
-  filter: "blur(20px)",
+    gsap.from(".stats .stat-item", {
+      opacity: 0,
+      y: 60,
+      scale: 0.92,
+      filter: "blur(10px)",
 
-  duration: 1.5,
-  ease: "power4.out"
-});
+      duration: 1.1,
+      ease: "power4.out",
 
-// method card
-  gsap.from(".method-single-card", {
-    opacity: 0,
-    y: 60,
-    scale: 0.95,
-    filter: "blur(12px)",
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: ".methos-card-wrap",
-      start: "top 80%",
-      toggleActions: "play none none none"
-    }
-  });
+      stagger: {
+        amount: 0.6,
+        from: "start"
+      },
+
+      scrollTrigger: {
+        trigger: ".stats",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+
+  }
 
 
-  // method items
+  // ======================================================
+  // ABOUT IMAGE
+  // ======================================================
+  if (document.querySelector(".about-image img")) {
+
+    gsap.from(".about-image img", {
+
+      scrollTrigger: {
+        trigger: ".about-image",
+        start: "top 70%",
+        toggleActions: "play none none reverse"
+      },
+
+      opacity: 0,
+      y: 90,
+      scale: 1.06,
+      filter: "blur(20px)",
+
+      duration: 1.5,
+      ease: "power4.out"
+    });
+
+  }
+
+
+  // ======================================================
+  // METHOD CARD
+  // ======================================================
+  if (
+    document.querySelector(".method-single-card") &&
+    document.querySelector(".method-card-wrap")
+  ) {
+
+    gsap.from(".method-single-card", {
+      opacity: 0,
+      y: 60,
+      scale: 0.95,
+      filter: "blur(12px)",
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+
+      scrollTrigger: {
+        trigger: ".method-card-wrap",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+  }
+
+
+  // ======================================================
+  // METHOD ITEMS
+  // ======================================================
+  if (document.querySelector(".method-item")) {
 
     gsap.set(".method-item", {
-        opacity: 0,
-        y: 40,
-        filter: "blur(12px)"
+      opacity: 0,
+      y: 40,
+      filter: "blur(12px)"
     });
 
     gsap.to(".method-item", {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.1,
 
-        scrollTrigger: {
-            trigger: ".method-list",
-            start: "top 80%",
-            toggleActions: "play none none none"
-        }
+      scrollTrigger: {
+        trigger: ".method-list",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
     });
 
-});
-document.addEventListener("DOMContentLoaded", () => {
-  // keep your existing stagger animation as it is
-  gsap.from(".structure-single-card", {
-    opacity: 0,
-    y: 60,
-    scale: 0.95,
-    filter: "blur(12px)",
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.2,
-    scrollTrigger: {
-      trigger: ".structure-card-wrap",
-      start: "top 80%",
-      toggleActions: "play none none none"
-    }
-  });
+  }
 
-  // magnetic effect
-  const items = document.querySelectorAll(".magnet-item");
 
-  items.forEach((item) => {
+  // ======================================================
+  // STRUCTURE CARD
+  // ======================================================
+  if (
+    document.querySelector(".structure-single-card") &&
+    document.querySelector(".structure-card-wrap")
+  ) {
+
+    gsap.from(".structure-single-card", {
+      opacity: 0,
+      y: 60,
+      scale: 0.95,
+      filter: "blur(12px)",
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+
+      scrollTrigger: {
+        trigger: ".structure-card-wrap",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+  }
+
+
+  // ======================================================
+  // MAGNET ITEMS
+  // ======================================================
+  const magnetItems = document.querySelectorAll(".magnet-item");
+
+  magnetItems.forEach((item) => {
+
     const icon = item.querySelector("img");
+
+    if (!icon) return;
+
     let bounds;
 
     const onMove = (e) => {
+
       const relX = e.clientX - bounds.left;
       const relY = e.clientY - bounds.top;
 
@@ -274,6 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.4,
         ease: "power3.out"
       });
+
     };
 
     const onEnter = () => {
@@ -282,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const onLeave = () => {
+
       item.removeEventListener("mousemove", onMove);
 
       gsap.to(icon, {
@@ -291,397 +345,449 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 0.6,
         ease: "elastic.out(1, 0.5)"
       });
+
     };
 
     item.addEventListener("mouseenter", onEnter);
     item.addEventListener("mouseleave", onLeave);
+
   });
-});
 
 
+  // ======================================================
+  // COURSES STICKY
+  // ======================================================
+  if (
+    document.querySelector(".courses-left") &&
+    document.querySelector(".courses-right")
+  ) {
 
-// the courses section
-document.addEventListener("DOMContentLoaded", () => {
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    // =====================================
-    // LEFT SIDE STICKY
-    // =====================================
     ScrollTrigger.matchMedia({
 
-        "(min-width: 1280px)": function () {
+      "(min-width: 1280px)": function () {
 
-            ScrollTrigger.create({
-                trigger: ".courses-left",
-                start: "top top+=100",
+        ScrollTrigger.create({
+          trigger: ".courses-left",
+          start: "top top+=100",
 
-                endTrigger: ".courses-right",
-                end: "bottom bottom-=500",
+          endTrigger: ".courses-right",
+          end: "bottom bottom-=500",
 
-                pin: true,
-                pinSpacing: false,
-                invalidateOnRefresh: true,
-            });
+          pin: true,
+          pinSpacing: false,
+          invalidateOnRefresh: true,
+        });
 
-        }
+      }
 
     });
 
+  }
 
-    // =====================================
-    // CLEAN STACK EFFECT
-    // =====================================
-    const cards = gsap.utils.toArray(".course-card");
+
+  // ======================================================
+  // COURSE STACK EFFECT
+  // ======================================================
+  const cards = gsap.utils.toArray(".course-card");
+
+  if (cards.length) {
 
     cards.forEach((card, index) => {
 
-        // New cards always above old cards
-        gsap.set(card, {
-            zIndex: index + 1
-        });
+      gsap.set(card, {
+        zIndex: index + 1
+      });
 
-        gsap.to(card, {
-            scale: 1 - (cards.length - index) * 0.01,
+      gsap.to(card, {
 
-            ease: "none",
+        scale: 1 - (cards.length - index) * 0.01,
 
-            scrollTrigger: {
-                trigger: card,
+        ease: "none",
 
-                start: "top center",
-                end: "top top+=120",
+        scrollTrigger: {
+          trigger: card,
+          start: "top center",
+          end: "top top+=120",
+          scrub: true,
+        }
 
-                scrub: true,
-            }
-        });
+      });
 
     });
 
-});
+  }
 
 
-// audio bars
-  document.addEventListener("DOMContentLoaded", () => {
-    const bars = document.querySelectorAll(
-      ".container img[src*='bar1.svg']"
-    );
+  // ======================================================
+  // AUDIO BARS
+  // ======================================================
+  const bars = document.querySelectorAll(
+    ".container img[src*='bar1.svg']"
+  );
 
-    // Set origin so bars grow from bottom
+  if (bars.length) {
+
     gsap.set(bars, {
       transformOrigin: "bottom center",
     });
 
-    function animateBars() {
-      bars.forEach((bar, i) => {
-        gsap.to(bar, {
-          scaleY: () => gsap.utils.random(0.2, 1.8),
-          duration: gsap.utils.random(0.4, 1.2),
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          delay: i * 0.03, // slight wave movement across bars
-        });
+    bars.forEach((bar, i) => {
+
+      gsap.to(bar, {
+        scaleY: () => gsap.utils.random(0.2, 1.8),
+        duration: gsap.utils.random(0.4, 1.2),
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.03,
       });
-    }
 
-    animateBars();
-  });
-
-
-  // Magnet svg animation
-  document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const section = document.querySelector(".values-section");
-  const items = section.querySelectorAll(".group");
-
-  /* ---------------------------
-     1. MOTION BLUR REVEAL
-  ----------------------------*/
-  gsap.from(items, {
-    scrollTrigger: {
-      trigger: section,
-      start: "top 75%",
-    },
-    opacity: 0,
-    y: 40,
-    filter: "blur(12px)",
-    duration: 1,
-    ease: "power3.out",
-    stagger: 0.08
-  });
-
-  /* ---------------------------
-     2. MAGNET EFFECT (SCOPED)
-  ----------------------------*/
-  items.forEach((item) => {
-    const icon = item.querySelector("img");
-    let bounds;
-
-    item.addEventListener("mouseenter", () => {
-      bounds = item.getBoundingClientRect();
     });
 
-    item.addEventListener("mousemove", (e) => {
-      const relX = e.clientX - bounds.left;
-      const relY = e.clientY - bounds.top;
-
-      const x = (relX - bounds.width / 2) * 0.2;
-      const y = (relY - bounds.height / 2) * 0.2;
-
-      gsap.to(icon, {
-        x,
-        y,
-        scale: 1.1,
-        duration: 0.4,
-        ease: "power3.out"
-      });
-    });
-
-    item.addEventListener("mouseleave", () => {
-      gsap.to(icon, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        duration: 0.6,
-        ease: "elastic.out(1, 0.5)"
-      });
-    });
-  });
-});
-
-// Splide JS Slider
-document.addEventListener('DOMContentLoaded', function () {
-
-  const splide = new Splide('#lesson-slider', {
-    type: 'loop',
-    drag: 'free',
-    focus: 'center',
-    perPage: 4,
-    gap: '10px',
-
-    arrows: false,
-    pagination: false,
-
-    autoScroll: {
-      speed: 0.8,
-      pauseOnHover: true,
-      pauseOnFocus: true,
-      pauseOnTouch: true,
-    },
-
-    breakpoints: {
-      1280: { perPage: 3 },
-      1024: { perPage: 2 },
-      640: { perPage: 1 }
-    }
-  });
-
-  splide.mount(window.splide.Extensions);
-
-  function updateUI() {
-    const isMobile = window.innerWidth <= 640;
-
-    // toggle arrows
-    splide.options = {
-      arrows: isMobile
-    };
-
-    // control autoplay
-    const autoScroll = splide.Components.AutoScroll;
-
-    if (!autoScroll) return;
-
-    if (isMobile) {
-      autoScroll.pause();   // stop autoplay on mobile
-    } else {
-      autoScroll.play();    // start autoplay on desktop
-    }
   }
 
-  updateUI();
-  window.addEventListener('resize', updateUI);
 
-});
+  // ======================================================
+  // VALUES SECTION
+  // ======================================================
+  const section = document.querySelector(".values-section");
 
+  if (section) {
 
+    const items = section.querySelectorAll(".group");
 
-// Audio play js
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".audio-item");
+    if (items.length) {
 
-  items.forEach(item => {
-    const audio = item.querySelector(".audio");
-    const btn = item.querySelector(".play-btn");
-    const progress = item.querySelector(".progress");
-    const time = item.querySelector(".time");
-    const durationEl = item.querySelector(".duration");
+      gsap.from(items, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 75%",
+        },
 
-    const playIcon = btn.querySelector(".icon-play");
-    const pauseIcon = btn.querySelector(".icon-pause");
+        opacity: 0,
+        y: 40,
+        filter: "blur(12px)",
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.08
+      });
 
-    // Load duration
-    audio.addEventListener("loadedmetadata", () => {
-      durationEl.textContent = formatTime(audio.duration);
+    }
+
+    items.forEach((item) => {
+
+      const icon = item.querySelector("img");
+
+      if (!icon) return;
+
+      let bounds;
+
+      item.addEventListener("mouseenter", () => {
+        bounds = item.getBoundingClientRect();
+      });
+
+      item.addEventListener("mousemove", (e) => {
+
+        const relX = e.clientX - bounds.left;
+        const relY = e.clientY - bounds.top;
+
+        const x = (relX - bounds.width / 2) * 0.2;
+        const y = (relY - bounds.height / 2) * 0.2;
+
+        gsap.to(icon, {
+          x,
+          y,
+          scale: 1.1,
+          duration: 0.4,
+          ease: "power3.out"
+        });
+
+      });
+
+      item.addEventListener("mouseleave", () => {
+
+        gsap.to(icon, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "elastic.out(1, 0.5)"
+        });
+
+      });
+
     });
 
-    // Play / Pause toggle
-    btn.addEventListener("click", () => {
-      if (audio.paused) {
-        pauseAll();
+  }
 
-        audio.play();
 
-        playIcon.classList.add("hidden");
-        pauseIcon.classList.remove("hidden");
+  // ======================================================
+  // LESSON SLIDER
+  // ======================================================
+  if (
+    typeof Splide !== "undefined" &&
+    document.getElementById("lesson-slider")
+  ) {
 
-      } else {
-        audio.pause();
+    const splide = new Splide("#lesson-slider", {
 
-        playIcon.classList.remove("hidden");
-        pauseIcon.classList.add("hidden");
+      type: "loop",
+      drag: "free",
+      focus: "center",
+      perPage: 4,
+      gap: "10px",
+
+      arrows: false,
+      pagination: false,
+
+      autoScroll: {
+        speed: 0.8,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+        pauseOnTouch: true,
+      },
+
+      breakpoints: {
+        1280: { perPage: 3 },
+        1024: { perPage: 2 },
+        640: { perPage: 1 }
+      }
+
+    });
+
+    splide.mount(window.splide.Extensions);
+
+  }
+
+
+  // ======================================================
+  // RING ANIMATION
+  // ======================================================
+  const rings = gsap.utils.toArray(".ring");
+
+  if (rings.length >= 3) {
+
+    gsap.set(rings, {
+      transformOrigin: "50% 50%",
+      opacity: 0.2,
+      filter: "drop-shadow(0px 0px 0px #CBA34E)"
+    });
+
+    const tl = gsap.timeline({
+      repeat: -1,
+      defaults: {
+        ease: "sine.inOut"
       }
     });
 
-    // Progress update
-    audio.addEventListener("timeupdate", () => {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      progress.style.width = percent + "%";
-      time.textContent = formatTime(audio.currentTime);
+    tl.to(rings[0], {
+      opacity: 1,
+      scale: 1.02,
+      filter: "drop-shadow(0px 0px 12px #CBA34E)",
+      duration: 0.4
+    })
+
+    .to(rings[0], {
+      opacity: 0.2,
+      scale: 1,
+      filter: "drop-shadow(0px 0px 0px #CBA34E)",
+      duration: 0.4
+    })
+
+    .to(rings[1], {
+      opacity: 1,
+      scale: 1.015,
+      filter: "drop-shadow(0px 0px 16px #CBA34E)",
+      duration: 0.4
+    }, "-=0.25")
+
+    .to(rings[1], {
+      opacity: 0.2,
+      scale: 1,
+      filter: "drop-shadow(0px 0px 0px #CBA34E)",
+      duration: 0.4
+    })
+
+    .to(rings[2], {
+      opacity: 1,
+      filter: "drop-shadow(0px 0px 20px #CBA34E)",
+      duration: 0.4
+    }, "-=0.25")
+
+    .to(rings[2], {
+      opacity: 0.2,
+      filter: "drop-shadow(0px 0px 0px #CBA34E)",
+      duration: 0.4
     });
 
-    // Reset when ended
-    audio.addEventListener("ended", () => {
-      progress.style.width = "0%";
+  }
 
-      playIcon.classList.remove("hidden");
-      pauseIcon.classList.add("hidden");
+
+  // ======================================================
+  // TESTIMONIAL SLIDER
+  // ======================================================
+  if (
+    typeof Splide !== "undefined" &&
+    document.getElementById("reviews-slider")
+  ) {
+
+    const reviewSplide = new Splide("#reviews-slider", {
+
+      type: "loop",
+      perPage: 2,
+      perMove: 1,
+      gap: "24px",
+
+      arrows: false,
+      pagination: false,
+
+      breakpoints: {
+        1024: { perPage: 2 },
+        768: { perPage: 1 },
+      },
+
     });
-  });
 
+    const dynamicRating = document.getElementById("dynamic-rating");
+
+    function updateLeftCardDetails(index = reviewSplide.index) {
+
+      const slideObj = reviewSplide.Components?.Slides?.getAt(index);
+
+      if (!slideObj || !slideObj.slide) return;
+
+      const rating = slideObj.slide.getAttribute("data-rating");
+
+      if (rating && dynamicRating) {
+        dynamicRating.textContent = rating;
+      }
+
+    }
+
+    reviewSplide.on("mounted move", function () {
+      updateLeftCardDetails(reviewSplide.index);
+    });
+
+    reviewSplide.mount();
+
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => reviewSplide.go("<"));
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => reviewSplide.go(">"));
+    }
+
+  }
+
+
+  // ======================================================
+  // AUDIO PLAYER
+  // ======================================================
+  const audioItems = document.querySelectorAll(".audio-item");
+
+  if (audioItems.length) {
+
+    audioItems.forEach((item) => {
+
+      const audio = item.querySelector(".audio");
+      const btn = item.querySelector(".play-btn");
+      const progress = item.querySelector(".progress");
+      const time = item.querySelector(".time");
+      const durationEl = item.querySelector(".duration");
+
+      if (!audio || !btn) return;
+
+      const playIcon = btn.querySelector(".icon-play");
+      const pauseIcon = btn.querySelector(".icon-pause");
+
+      audio.addEventListener("loadedmetadata", () => {
+
+        if (durationEl) {
+          durationEl.textContent = formatTime(audio.duration);
+        }
+
+      });
+
+      btn.addEventListener("click", () => {
+
+        if (audio.paused) {
+
+          pauseAll();
+
+          audio.play();
+
+          playIcon?.classList.add("hidden");
+          pauseIcon?.classList.remove("hidden");
+
+        } else {
+
+          audio.pause();
+
+          playIcon?.classList.remove("hidden");
+          pauseIcon?.classList.add("hidden");
+
+        }
+
+      });
+
+      audio.addEventListener("timeupdate", () => {
+
+        if (!progress || !time) return;
+
+        const percent = (audio.currentTime / audio.duration) * 100;
+
+        progress.style.width = percent + "%";
+
+        time.textContent = formatTime(audio.currentTime);
+
+      });
+
+      audio.addEventListener("ended", () => {
+
+        if (progress) {
+          progress.style.width = "0%";
+        }
+
+        playIcon?.classList.remove("hidden");
+        pauseIcon?.classList.add("hidden");
+
+      });
+
+    });
+
+  }
+
+
+  // ======================================================
+  // HELPERS
+  // ======================================================
   function pauseAll() {
-    document.querySelectorAll(".audio").forEach(a => a.pause());
 
-    document.querySelectorAll(".play-btn").forEach(btn => {
-      btn.querySelector(".icon-play").classList.remove("hidden");
-      btn.querySelector(".icon-pause").classList.add("hidden");
+    document.querySelectorAll(".audio").forEach((a) => a.pause());
+
+    document.querySelectorAll(".play-btn").forEach((btn) => {
+
+      btn.querySelector(".icon-play")?.classList.remove("hidden");
+
+      btn.querySelector(".icon-pause")?.classList.add("hidden");
+
     });
+
   }
 
   function formatTime(sec) {
+
     if (!sec) return "0:00";
+
     const m = Math.floor(sec / 60);
     const s = Math.floor(sec % 60);
+
     return `${m}:${s.toString().padStart(2, "0")}`;
-  }
-});
 
-
-
-// ring path animation
-document.addEventListener("DOMContentLoaded", () => {
-  const rings = gsap.utils.toArray(".ring");
-
-  gsap.set(rings, {
-    transformOrigin: "50% 50%",
-    opacity: 0.2,
-    filter: "drop-shadow(0px 0px 0px #CBA34E)"
-  });
-
-  const tl = gsap.timeline({
-    repeat: -1,
-    defaults: { ease: "sine.inOut" }
-  });
-
-  // Ring 1 pulse (inner)
-  tl.to(rings[0], {
-    opacity: 1,
-    scale: 1.02,
-    filter: "drop-shadow(0px 0px 12px #CBA34E)",
-    duration: 0.4
-  })
-  .to(rings[0], {
-    opacity: 0.2,
-    scale: 1,
-    filter: "drop-shadow(0px 0px 0px #CBA34E)",
-    duration: 0.4
-  })
-
-  // Ring 2 pulse (middle)
-  .to(rings[1], {
-    opacity: 1,
-    scale: 1.015,
-    filter: "drop-shadow(0px 0px 16px #CBA34E)",
-    duration: 0.4
-  }, "-=0.25")
-  .to(rings[1], {
-    opacity: 0.2,
-    scale: 1,
-    filter: "drop-shadow(0px 0px 0px #CBA34E)",
-    duration: 0.4
-  })
-
-  // Ring 3 pulse (OUTER ONLY GLOWS, NO SCALE)
-  .to(rings[2], {
-    opacity: 1,
-    filter: "drop-shadow(0px 0px 20px #CBA34E)",
-    duration: 0.4
-  }, "-=0.25")
-  .to(rings[2], {
-    opacity: 0.2,
-    filter: "drop-shadow(0px 0px 0px #CBA34E)",
-    duration: 0.4
-  });
-});
-
-
-// testimonial slider
-document.addEventListener('DOMContentLoaded', function () {
-
-  const splide = new Splide('#reviews-slider', {
-    type: 'loop',
-    perPage: 2,
-    perMove: 1,
-    gap: '24px',
-    arrows: false,
-    pagination: false,
-    breakpoints: {
-      1024: { perPage: 2 },
-      768: { perPage: 1 },
-    },
-  });
-
-  const dynamicRating = document.getElementById('dynamic-rating');
-
-  function updateLeftCardDetails(index = splide.index) {
-    const slideObj = splide.Components?.Slides?.getAt(index);
-
-    if (!slideObj || !slideObj.slide) return;
-
-    const rating = slideObj.slide.getAttribute('data-rating');
-
-    if (rating && dynamicRating) {
-      dynamicRating.textContent = rating;
-    }
-  }
-
-  splide.on('mounted move', function () {
-    updateLeftCardDetails(splide.index);
-  });
-
-  splide.mount();
-
-  // buttons
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => splide.go('<'));
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => splide.go('>'));
   }
 
 });
