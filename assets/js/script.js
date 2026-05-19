@@ -669,79 +669,209 @@ popup.addEventListener("click", (e) => {
   // ======================================================
   // AUDIO PLAYER
   // ======================================================
-  const audioItems = document.querySelectorAll(".audio-item");
+const audioItems = document.querySelectorAll(".audio-item");
 
-  if (audioItems.length) {
+function formatTime(seconds) {
 
-    audioItems.forEach((item) => {
+  if (isNaN(seconds)) return "0:00";
 
-      const audio = item.querySelector(".audio");
-      const btn = item.querySelector(".play-btn");
-      const progress = item.querySelector(".progress");
-      const time = item.querySelector(".time");
-      const durationEl = item.querySelector(".duration");
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
 
-      if (!audio || !btn) return;
+  return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
 
-      const playIcon = btn.querySelector(".icon-play");
-      const pauseIcon = btn.querySelector(".icon-pause");
+}
 
-      audio.addEventListener("loadedmetadata", () => {
 
-        if (durationEl) {
-          durationEl.textContent = formatTime(audio.duration);
-        }
+// pause all audios
+function pauseAll() {
 
-      });
+  document.querySelectorAll(".audio-item").forEach((item) => {
 
-      btn.addEventListener("click", () => {
+    const audio = item.querySelector(".audio");
 
-        if (audio.paused) {
+    const playIcon = item.querySelector(".icon-play");
+    const pauseIcon = item.querySelector(".icon-pause");
 
-          pauseAll();
+    if (audio) {
 
-          audio.play();
+      audio.pause();
 
-          playIcon?.classList.add("hidden");
-          pauseIcon?.classList.remove("hidden");
+      playIcon?.classList.remove("hidden");
+      pauseIcon?.classList.add("hidden");
 
-        } else {
+    }
 
-          audio.pause();
+  });
 
-          playIcon?.classList.remove("hidden");
-          pauseIcon?.classList.add("hidden");
+}
 
-        }
 
-      });
+if (audioItems.length) {
 
-      audio.addEventListener("timeupdate", () => {
+  audioItems.forEach((item) => {
 
-        if (!progress || !time) return;
+    const audio = item.querySelector(".audio");
+    const btn = item.querySelector(".play-btn");
 
-        const percent = (audio.currentTime / audio.duration) * 100;
+    const progress = item.querySelector(".progress");
+    const progressWrapper = item.querySelector(".progress-wrapper");
+    const thumb = item.querySelector(".progress-thumb");
 
-        progress.style.width = percent + "%";
+    const time = item.querySelector(".time");
+    const durationEl = item.querySelector(".duration");
 
-        time.textContent = formatTime(audio.currentTime);
+    const playIcon = btn.querySelector(".icon-play");
+    const pauseIcon = btn.querySelector(".icon-pause");
 
-      });
+    let isDragging = false;
 
-      audio.addEventListener("ended", () => {
+    if (!audio || !btn) return;
 
-        if (progress) {
-          progress.style.width = "0%";
-        }
 
-        playIcon?.classList.remove("hidden");
-        pauseIcon?.classList.add("hidden");
+    // load duration
+    audio.addEventListener("loadedmetadata", () => {
 
-      });
+      durationEl.textContent = formatTime(audio.duration);
 
     });
 
-  }
+
+    // play pause
+    btn.addEventListener("click", () => {
+
+      if (audio.paused) {
+
+        pauseAll();
+
+        audio.play();
+
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+
+      } else {
+
+        audio.pause();
+
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+
+      }
+
+    });
+
+
+    // update UI while playing
+    audio.addEventListener("timeupdate", () => {
+
+      if (isDragging) return;
+
+      const percent = (audio.currentTime / audio.duration) * 100;
+
+      progress.style.width = percent + "%";
+
+      thumb.style.left = percent + "%";
+
+      time.textContent = formatTime(audio.currentTime);
+
+    });
+
+
+    // audio end
+    audio.addEventListener("ended", () => {
+
+      progress.style.width = "0%";
+
+      thumb.style.left = "0%";
+
+      playIcon.classList.remove("hidden");
+      pauseIcon.classList.add("hidden");
+
+    });
+
+
+    // seek function
+    function seekAudio(clientX) {
+
+      const rect = progressWrapper.getBoundingClientRect();
+
+      let offsetX = clientX - rect.left;
+
+      offsetX = Math.max(0, Math.min(offsetX, rect.width));
+
+      const percent = offsetX / rect.width;
+
+      audio.currentTime = percent * audio.duration;
+
+      progress.style.width = percent * 100 + "%";
+
+      thumb.style.left = percent * 100 + "%";
+
+      time.textContent = formatTime(audio.currentTime);
+
+    }
+
+
+    // click progress bar
+    progressWrapper.addEventListener("click", (e) => {
+
+      seekAudio(e.clientX);
+
+    });
+
+
+    // desktop drag
+    thumb.addEventListener("mousedown", (e) => {
+
+      isDragging = true;
+
+      e.preventDefault();
+
+    });
+
+
+    document.addEventListener("mousemove", (e) => {
+
+      if (!isDragging) return;
+
+      seekAudio(e.clientX);
+
+    });
+
+
+    document.addEventListener("mouseup", () => {
+
+      isDragging = false;
+
+    });
+
+
+    // mobile touch drag
+    thumb.addEventListener("touchstart", () => {
+
+      isDragging = true;
+
+    });
+
+
+    document.addEventListener("touchmove", (e) => {
+
+      if (!isDragging) return;
+
+      seekAudio(e.touches[0].clientX);
+
+    });
+
+
+    document.addEventListener("touchend", () => {
+
+      isDragging = false;
+
+    });
+
+  });
+
+}
 
 
   // ======================================================

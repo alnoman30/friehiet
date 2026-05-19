@@ -540,7 +540,7 @@
 
   <!-- The courses section -->
   <section class="courses-section py-10 md:py-24" style="
-        background-image: url(/assets/images/radianl-center.svg);
+        background-image: url('/assets/images/radianl-center.svg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -659,16 +659,25 @@
     </div>
   </section>
 
+
   <!-- Audio play section -->
   <section class="py-10 md:py-24">
+
     <div class="container">
+
       <div class="section-heading max-w-183.75 mx-auto text-center mb-12">
+
         <h2 class="font-instrument text-[45px] sm:text-[54px] md:text-[72px] text-primary font-normal leading-110%">
-          <span class="text-secondary instrument-font-italic">Audio</span> Content
+
+          <span class="text-secondary instrument-font-italic">Audio</span>
+          Content
+
         </h2>
+
         <p class="text-gray text-[16px] sm:text-xl font-normal leading-[150%]">
           Guided lessons, reflections, and healing content to support your growth anytime.
         </p>
+
       </div>
 
 
@@ -676,14 +685,15 @@
       <div class="space-y-6">
 
         <!-- ITEM 1 -->
-        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5 ">
+        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5">
 
           <audio class="audio" src="assets/audios/Alan Walker - Faded.mp3"></audio>
 
           <div class="flex items-center gap-4">
 
             <!-- PLAY BUTTON -->
-            <button class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center">
+            <button
+              class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center shrink-0">
 
               <!-- PLAY ICON -->
               <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -699,18 +709,32 @@
 
             </button>
 
+
             <!-- PROGRESS -->
             <div class="flex-1 relative h-10 flex items-center">
-              <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                <div class="progress h-full bg-secondary w-0"></div>
+
+              <div
+                class="progress-wrapper w-full h-1 bg-gray-200 rounded-full overflow-visible cursor-pointer relative">
+
+                <!-- progress -->
+                <div class="progress h-full bg-secondary rounded-full w-0"></div>
+
+                <!-- draggable thumb -->
+                <div
+                  class="progress-thumb absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-md cursor-pointer">
+                </div>
+
               </div>
 
+              <!-- current time -->
               <span class="time absolute right-0 text-gray text-[12px] sm:text-sm font-bold leading-[150%] top-6">
                 0:00
               </span>
+
             </div>
 
-            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right">
+            <!-- duration -->
+            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right shrink-0">
               0:00
             </div>
 
@@ -721,15 +745,18 @@
           </h4>
 
         </div>
+
+
         <!-- ITEM 2 -->
-        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5 ">
+        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5">
 
           <audio class="audio" src="assets/audios/Alan Walker - Faded.mp3"></audio>
 
           <div class="flex items-center gap-4">
 
             <!-- PLAY BUTTON -->
-            <button class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center">
+            <button
+              class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center shrink-0">
 
               <!-- PLAY ICON -->
               <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -745,18 +772,32 @@
 
             </button>
 
+
             <!-- PROGRESS -->
             <div class="flex-1 relative h-10 flex items-center">
-              <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                <div class="progress h-full bg-secondary w-0"></div>
+
+              <div
+                class="progress-wrapper w-full h-1 bg-gray-200 rounded-full overflow-visible cursor-pointer relative">
+
+                <!-- progress -->
+                <div class="progress h-full bg-secondary rounded-full w-0"></div>
+
+                <!-- draggable thumb -->
+                <div
+                  class="progress-thumb absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-md cursor-pointer">
+                </div>
+
               </div>
 
+              <!-- current time -->
               <span class="time absolute right-0 text-gray text-[12px] sm:text-sm font-bold leading-[150%] top-6">
                 0:00
               </span>
+
             </div>
 
-            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right">
+            <!-- duration -->
+            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right shrink-0">
               0:00
             </div>
 
@@ -767,15 +808,18 @@
           </h4>
 
         </div>
+
+
         <!-- ITEM 3 -->
-        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5 ">
+        <div class="audio-item bg-white border border-[#ADC3C7] rounded-2xl sm:rounded-3xl p-3 sm:p-5">
 
           <audio class="audio" src="assets/audios/Alan Walker - Faded.mp3"></audio>
 
           <div class="flex items-center gap-4">
 
             <!-- PLAY BUTTON -->
-            <button class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center">
+            <button
+              class="play-btn w-10 h-10 rounded-full border border-secondary flex items-center justify-center shrink-0">
 
               <!-- PLAY ICON -->
               <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -791,18 +835,32 @@
 
             </button>
 
+
             <!-- PROGRESS -->
             <div class="flex-1 relative h-10 flex items-center">
-              <div class="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-                <div class="progress h-full bg-secondary w-0"></div>
+
+              <div
+                class="progress-wrapper w-full h-1 bg-gray-200 rounded-full overflow-visible cursor-pointer relative">
+
+                <!-- progress -->
+                <div class="progress h-full bg-secondary rounded-full w-0"></div>
+
+                <!-- draggable thumb -->
+                <div
+                  class="progress-thumb absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-secondary shadow-md cursor-pointer">
+                </div>
+
               </div>
 
+              <!-- current time -->
               <span class="time absolute right-0 text-gray text-[12px] sm:text-sm font-bold leading-[150%] top-6">
                 0:00
               </span>
+
             </div>
 
-            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right">
+            <!-- duration -->
+            <div class="duration text-gray text-sm sm:text-[16px] font-bold leading-[150%] text-right shrink-0">
               0:00
             </div>
 
@@ -815,8 +873,8 @@
         </div>
 
       </div>
-    </div>
 
+    </div>
 
   </section>
   <!--  Listen live -->
@@ -1023,7 +1081,8 @@
         </h2>
       </div>
 
-      <div id="lesson-slider" class="splide md:w-screen md:relative md:left-1/2 md:-translate-x-1/2 md:pl-[calc((100vw-100%)/2)]"
+      <div id="lesson-slider"
+        class="splide md:w-screen md:relative md:left-1/2 md:-translate-x-1/2 md:pl-[calc((100vw-100%)/2)]"
         aria-label="Course Lessons">
         <div class="splide__track">
           <ul class="splide__list">
@@ -1052,7 +1111,8 @@
                       Your Tongue Shapes Your Life 60 Seconds That Can Change Everything 1
                     </h3>
 
-                    <div class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
+                    <div
+                      class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
                       <img src="assets/images/video-play.svg" alt="play icon" class="w-5 h-5 sm:w-6 sm:h-6">
                       <span>03:06</span>
                     </div>
@@ -1085,7 +1145,8 @@
                       The Secret Weapon for Mental & Emotional Strength – The Power of Words
                     </h3>
 
-                    <div class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
+                    <div
+                      class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
                       <img src="assets/images/video-play.svg" alt="play icon" class="w-5 h-5 sm:w-6 sm:h-6">
                       <span>03:06</span>
                     </div>
@@ -1118,7 +1179,8 @@
                       PTT The Hidden Power of the Tongue – A Glimpse Preview Into Emotional Freedom
                     </h3>
 
-                    <div class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
+                    <div
+                      class="flex items-center space-x-2 text-base sm:text-lg md:text-xl font-normal leading-[110%] text-secondary">
                       <img src="assets/images/video-play.svg" alt="play icon" class="w-5 h-5 sm:w-6 sm:h-6">
                       <span>03:06</span>
                     </div>
