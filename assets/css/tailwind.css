@@ -378,6 +378,7 @@ html.lenis body {
 #lesson-slider {
   overflow: hidden;
   position: relative;
+  padding-bottom: 90px; /* space for arrows */
 }
 
 #lesson-slider .splide__track {
@@ -393,10 +394,42 @@ html.lenis body {
   box-sizing: border-box;
 }
 
-/* arrows default hidden */
+/* arrows wrapper */
 #lesson-slider .splide__arrows {
-  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  width: max-content;
 }
+
+/* arrow buttons */
+#lesson-slider .splide__arrow {
+  position: static !important;
+  transform: none !important;
+
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+
+  border-radius: 9999px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 /* audio player */
 .progress-wrapper {
