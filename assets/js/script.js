@@ -495,13 +495,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======================================================
 const splide = new Splide("#lesson-slider", {
   type: "loop",
-  drag: "free",
-
-  focus: "left",
+  focus: 0,
   trimSpace: false,
 
   perPage: 4.5,
+  perMove: 1, 
   gap: "10px",
+
+  speed: 600, 
 
   arrows: false,
   pagination: false,
