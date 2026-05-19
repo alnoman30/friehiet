@@ -657,4 +657,7 @@ html.lenis body {
   .call-btn{
     display: none;
   }
+  .hero-title{
+    font-size: 28px;
+  }
 }
