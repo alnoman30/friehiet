@@ -377,7 +377,7 @@ html.lenis body {
 
 #lesson-slider {
   overflow: hidden;
-  /* 🔥 critical fix */
+  position: relative;
 }
 
 #lesson-slider .splide__track {
@@ -393,32 +393,52 @@ html.lenis body {
   box-sizing: border-box;
 }
 
-
-.splide__arrow {
-  background: white;
-  border-radius: 999px;
-  width: 44px;
-  height: 44px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s linear;
+/* arrows default hidden */
+#lesson-slider .splide__arrows {
+  display: none;
 }
 
-/* icon */
-.splide__arrow svg {
-  fill: var(--color-secondary);
-  transition: all 0.3s linear;
-}
+/* MOBILE ONLY */
+@media (max-width: 640px) {
+  #lesson-slider .splide__arrows {
+    display: block;
+  }
 
-/* hover effect on button */
-.splide__arrow:hover {
-  background-color: var(--color-secondary);
-}
+  #lesson-slider .splide__arrow {
+    background: white;
+    border-radius: 999px;
+    width: 42px;
+    height: 42px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s linear;
+    opacity: 1;
+    z-index: 20;
+  }
 
-/* change icon color when button is hovered */
-.splide__arrow:hover svg {
-  fill: white;
-}
+  /* icon */
+  #lesson-slider .splide__arrow svg {
+    fill: var(--color-secondary);
+    transition: all 0.3s linear;
+  }
 
+  /* hover */
+  #lesson-slider .splide__arrow:hover {
+    background-color: var(--color-secondary);
+  }
+
+  #lesson-slider .splide__arrow:hover svg {
+    fill: white;
+  }
+
+  /* positioning */
+  #lesson-slider .splide__arrow--prev {
+    left: 10px;
+  }
+
+  #lesson-slider .splide__arrow--next {
+    right: 10px;
+  }
+}
 /* transformation */
 .transformation-list{
   display: grid;
@@ -620,6 +640,8 @@ html.lenis body {
   line-height: 130%;
   margin: 0;
 }
+
+
 /* =========================
    RESPONSIVE
 ========================= */

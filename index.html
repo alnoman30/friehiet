@@ -23,13 +23,13 @@
     <!-- FULL HEIGHT LAYOUT -->
     <div class="relative z-10 min-h-screen flex flex-col">
 
-    <!-- =========================
+      <!-- =========================
          HEADER
     ========================== -->
       <header class="hero-header">
         <div class="hero-container px-6 py-8">
 
-          <nav class="custom-navbar border-b border-white/12 pb-7.5">
+          <nav class="custom-navbar border-b border-white/12 pb-5.5">
 
             <div class="logo max-w-32.5">
               <a href="index.html">
@@ -148,7 +148,8 @@
             </h1>
 
             <!-- Features -->
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 md:gap-8 mb-6 text-sm sm:text-base md:text-lg font-medium leading-6">
+            <div
+              class="flex flex-col sm:flex-row gap-3 sm:gap-5 md:gap-8 mb-6 text-sm sm:text-base md:text-lg font-medium leading-6">
 
               <div class="flex items-center gap-3">
                 <span>
@@ -1022,12 +1023,14 @@
         </h2>
       </div>
 
-      <div id="lesson-slider" class="splide" aria-label="Course Lessons">
+      <div id="lesson-slider" class="w-screen relative left-1/2 -translate-x-1/2 pl-[calc((100vw-100%)/2)] splide"
+        aria-label="Course Lessons">
         <div class="splide__track">
           <ul class="splide__list">
             <!-- slide card -->
             <li class="splide__slide p-2">
-              <a href="#" class="block h-full group">
+              <a href="#" class="block h-full group video-trigger"
+                data-video="https://youtu.be/B9VRvOKKwfs?si=dFORz-JeSqVC7QXA">
                 <div
                   class="bg-[#FBF9F8] rounded-3xl overflow-hidden duration-300 border-4 border-[#FFF] flex flex-col h-full">
 
@@ -1059,7 +1062,8 @@
             </li>
             <!-- slide card -->
             <li class="splide__slide p-2">
-              <a href="#" class="block h-full group">
+              <a href="#" class="block h-full group video-trigger"
+                data-video="https://youtu.be/B9VRvOKKwfs?si=dFORz-JeSqVC7QXA">
                 <div
                   class="bg-[#FBF9F8] rounded-3xl overflow-hidden duration-300 border-4 border-[#FFF] flex flex-col h-full">
 
@@ -1091,7 +1095,8 @@
             </li>
             <!-- slide card -->
             <li class="splide__slide p-2">
-              <a href="#" class="block h-full group">
+              <a href="#" class="block h-full group video-trigger"
+                data-video="https://youtu.be/B9VRvOKKwfs?si=dFORz-JeSqVC7QXA">
                 <div
                   class="bg-[#FBF9F8] rounded-3xl overflow-hidden duration-300 border-4 border-[#FFF] flex flex-col h-full">
 
@@ -1121,9 +1126,6 @@
                 </div>
               </a>
             </li>
-
-
-
 
           </ul>
         </div>
@@ -1718,6 +1720,25 @@
 
     </div>
   </footer>
+
+
+
+
+  <!-- VIDEO POPUP -->
+  <div id="video-popup" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 p-4">
+
+    <!-- close button -->
+    <button id="close-video" class="absolute top-5 right-5 text-white text-5xl leading-none z-20">
+      &times;
+    </button>
+
+    <!-- video wrapper -->
+    <div class="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden bg-black">
+      <iframe id="popup-video" class="w-full h-full" src="" title="Video Player" frameborder="0"
+        allow="autoplay; encrypted-media" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>

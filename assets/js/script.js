@@ -157,31 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   }
-// Hero stats
-  gsap.set(".stat-item", {
-    opacity: 0,
-    y: 24,
-  });
 
-  gsap.timeline({
-    defaults: {
-      ease: "power2.out",
-    }
-  })
-  .to(".stat-item", {
-    opacity: 1,
-    y: 0,
-    duration: 0.55,
-    stagger: 0.08,
-    clearProps: "all"
-  })
-  .from(".stat-number", {
-    scale: 0.92,
-    opacity: 0,
-    duration: 0.35,
-    stagger: 0.08,
-    ease: "power1.out"
-  }, "-=0.35");
   // ======================================================
   // STATS ANIMATION
   // ======================================================
@@ -517,41 +493,73 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======================================================
   // LESSON SLIDER
   // ======================================================
-  if (
-    typeof Splide !== "undefined" &&
-    document.getElementById("lesson-slider")
-  ) {
+const splide = new Splide("#lesson-slider", {
+  type: "loop",
+  drag: "free",
 
-    const splide = new Splide("#lesson-slider", {
+  focus: "left",
+  trimSpace: false,
 
-      type: "loop",
-      drag: "free",
-      focus: "center",
-      perPage: 4,
-      gap: "10px",
+  perPage: 4.5,
+  gap: "10px",
 
-      arrows: false,
-      pagination: false,
+  arrows: false,
+  pagination: false,
 
-      autoScroll: {
-        speed: 0.8,
-        pauseOnHover: true,
-        pauseOnFocus: true,
-        pauseOnTouch: true,
-      },
+  breakpoints: {
+    1280: {
+      perPage: 3,
+    },
 
-      breakpoints: {
-        1280: { perPage: 3 },
-        1024: { perPage: 2 },
-        640: { perPage: 1 }
-      }
+    1024: {
+      perPage: 2,
+    },
 
-    });
+    640: {
+      perPage: 1,
+      arrows: true,
+    },
+  },
+});
 
-    splide.mount(window.splide.Extensions);
+splide.mount();
 
+
+// VIDEO POPUP
+const popup = document.getElementById("video-popup");
+const iframe = document.getElementById("popup-video");
+const closeBtn = document.getElementById("close-video");
+
+document.querySelectorAll(".video-trigger").forEach((item) => {
+  item.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const videoUrl = this.getAttribute("data-video");
+
+    iframe.src = videoUrl;
+
+    popup.classList.remove("hidden");
+    popup.classList.add("flex");
+  });
+});
+
+// CLOSE POPUP
+closeBtn.addEventListener("click", () => {
+  popup.classList.add("hidden");
+  popup.classList.remove("flex");
+
+  iframe.src = "";
+});
+
+// CLOSE WHEN CLICK OUTSIDE
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.classList.add("hidden");
+    popup.classList.remove("flex");
+
+    iframe.src = "";
   }
-
+});
 
   // ======================================================
   // RING ANIMATION
