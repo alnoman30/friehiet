@@ -518,6 +518,7 @@ const splide = new Splide("#lesson-slider", {
     640: {
       perPage: 1,
       arrows: true,
+      gap: "0px",
     },
   },
 });
